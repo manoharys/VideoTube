@@ -27,14 +27,26 @@
 
 <body>
     <div id="pageContainer">
+        <!-- main header -->
         <div id="mastHeadContainer">
-             <button class= "navShowHide">
-                 <img src="./assets/images/icons/menu.png" alt="menu">
-             </button>
-      </div>
-        <div id="sideNavContainer" style="display:none;">
-            
+         <!-- menu bar btn -->
+            <button class="navShowHide">
+                <img src="./assets/images/icons/menu.png" alt="menu">
+            </button>
+         <!-- app logo  -->
+            <a class='logoContainer' href="index.php">
+            <img src="./assets/images/icons/VideoTubeLogo.png" title="VideoTube home" alt="site-logo">
+            </a>
         </div>
+
+
+        <!-- side navigation bar -->
+        <div id="sideNavContainer" style="display:none;">
+
+        </div>
+
+
+        <!--main section area  -->
         <div id="mainSectionContainer">
             <div id="mainContentContainer">
                 Hello Manohar!

@@ -10,6 +10,14 @@ body {
   width: 100%;
 }
 
+/* main container */
+#pageContainer {
+  background: #fafafa;
+  width: 100%;
+  height: 100%;
+}
+
+/* header */
 #mastHeadContainer {
   width: 100%;
   height: 56px;
@@ -24,12 +32,26 @@ body {
   border: 1px solid #e8e8e8;
 }
 
-#pageContainer {
-  background: #fafafa;
+#mastHeadContainer button {
+  cursor: pointer;
+  border: none;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  padding: 8px;
+}
+#mastHeadContainer button img {
   width: 100%;
-  height: 100%;
+}
+#mastHeadContainer .logoContainer {
+  width: 150px;
+}
+#mastHeadContainer .logoContainer img {
+  height: 25px;
+  margin-left: 10px;
 }
 
+/* Side navBar */
 #sideNavContainer {
   width: 240px;
   padding-top: 56px;
@@ -41,6 +63,7 @@ body {
   bottom: 0;
 }
 
+/* Main section  */
 #mainSectionContainer {
   padding-top: 56px;
   display: flex;
@@ -48,18 +71,6 @@ body {
 
 #mainContentContainer {
   padding: 10px 30px;
-}
-
-#mastHeadContainer button {
-  cursor: pointer;
-  border: none;
-  width: 40px;
-  height: 40px;
-  background: transparent;
-  padding: 8px;
-}
-#mastHeadContainer button img {
-  width: 100%;
 }
 
 #mainSectionContainer.leftPadding {
