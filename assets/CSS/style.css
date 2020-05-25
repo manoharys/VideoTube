@@ -1,3 +1,31 @@
-*{
-    color:red;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#mastHeadContainer {
+    width: 100%;
+    height: 56px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    z-index: 1;
+    border:1px solid #e8e8e8;
+
+}
+
+#pageContainer {
+    background: #fafafa;
+    width: 100%;
+    height: 100%;
 }

@@ -11,7 +11,7 @@
 <body>
      <div id="pageContainer">
          <div id="mastHeadContainer">
-         
+            YouTube
          </div>
         <div id="sideNavContainer">
 
