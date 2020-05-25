@@ -29,14 +29,23 @@
     <div id="pageContainer">
         <!-- main header -->
         <div id="mastHeadContainer">
-         <!-- menu bar btn -->
+            <!-- menu bar btn -->
             <button class="navShowHide">
                 <img src="./assets/images/icons/menu.png" alt="menu">
             </button>
-         <!-- app logo  -->
+            <!-- app logo  -->
             <a class='logoContainer' href="index.php">
-            <img src="./assets/images/icons/VideoTubeLogo.png" title="VideoTube home" alt="site-logo">
+                <img src="./assets/images/icons/VideoTubeLogo.png" title="VideoTube home" alt="site-logo">
             </a>
+            <!--Search bar  -->
+            <div class="searchBarContainer">
+                <form action="search.php" method="get">
+                    <input type="text" class="searchBar" name="term" placeholder="Search" autofocus>
+                    <button class="searchButton">
+                        <img src="./assets/images/icons/search.png" alt="menu">
+                    </button>
+                </form>
+            </div>
         </div>
 
 
