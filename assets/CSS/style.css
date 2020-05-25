@@ -13,6 +13,7 @@ body {
 #mastHeadContainer {
     width: 100%;
     height: 56px;
+    padding: 7px 16px;
     position: fixed;
     top: 0;
     left: 0;
@@ -39,4 +40,13 @@ body {
     flex-direction: column;
     top: 0;
     bottom: 0;
+}
+
+#mainSectionContainer {
+    padding-top: 56px;
+    display: flex;
+}
+
+#mainContentContainer {
+    padding: 10px 30px;
 }
