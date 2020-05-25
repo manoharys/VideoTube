@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="./assets/CSS/style.css">
 </head>
 <body>
-     YOUTUBE-ClONE
+     <div id="pageContainer">
+         <div id="mastHeadContainer">
+         
+         </div>
+        <div id="sideNavContainer">
+
+        </div>
+        <div id="mainSectionContainer">
+        
+        </div>
+     </div>
 </body>
 </html>
