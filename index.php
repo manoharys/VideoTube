@@ -28,7 +28,9 @@
 <body>
     <div id="pageContainer">
         <div id="mastHeadContainer">
-             <button class= "navShowHide"> Click ME!</button>
+             <button class= "navShowHide">
+                 <img src="./assets/images/icons/menu.png" alt="menu">
+             </button>
       </div>
         <div id="sideNavContainer" style="display:none;">
             
