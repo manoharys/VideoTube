@@ -67,9 +67,9 @@ body {
 .searchBarContainer form input {
   flex: 1;
   max-width: 600px;
-  padding: 2px 5px;
-  font-size: 14px;
-  font-weight: 100;
+  padding: 2px 12px;
+  font-size: 16px;
+  font-weight: 400;
   border: 1px solid #ccc;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
