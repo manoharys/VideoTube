@@ -54,7 +54,7 @@
         private function createCategoriesInput(){
                 
             $html = "<div class='form-group'>
-            <select class='form-control' name=privacyInput>"; 
+            <select class='form-control' name=CategoryInput>"; 
                 $query = $this->conn->prepare("SELECT * FROM categories");
                 $query->execute();
                    while($row = $query->fetch(PDO::FETCH_ASSOC)){
