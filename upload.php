@@ -4,15 +4,9 @@
 
 <div class="column">
    <?php
-     $x = new VideoDetailsFormProvider();
+     $x = new VideoDetailsFormProvider($conn);
      echo  $x->createUploadForm();
 
-     $query = $conn->prepare("SELECT * FROM categories");
-     $query->execute();
-
-     while($row = $query->fetch(PDO::FETCH_ASSOC)){
-         echo $row['name']."<br>";
-     }
    ?>
 
 </div>
