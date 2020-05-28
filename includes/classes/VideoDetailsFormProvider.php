@@ -6,10 +6,12 @@
            $fileInput = $this->createFileInput();
            $titleInput = $this->createTitleInput();
            $descriptionInput = $this->createDescriptionInput();
+           $privacyInput = $this->createPrivacyInput();
            return "<form action ='processing.php' method='POST'>
                 $fileInput
                 $titleInput
                 $descriptionInput
+                $privacyInput
            </form>";
        }
 
@@ -26,8 +28,18 @@
             </div>";
         }
         private function createDescriptionInput(){
-            return "<div class='form-group'>
-            <textarea class='form-control' type='text' placeholder='Description' name='descriptionInput' rows='4' required></textarea>
+                return "<div class='form-group'>
+                        <textarea class='form-control' type='text' placeholder='Description' name='descriptionInput' rows='4' required></textarea>
+                </div>";
+        }
+
+        private function createPrivacyInput(){
+            return "
+             <div class='form-group'>
+                <select class='form-control' name=privacyInput>
+                    <option value=0> private</option>
+                    <option value=1> public</option>
+                </select>
             </div>";
         }
    }
