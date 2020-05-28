@@ -123,6 +123,8 @@ a:hover {
 #mainContentContainer {
   padding: 10px 30px;
   flex: 1;
+  display: flex;
+
 }
 
 #mainSectionContainer.leftPadding {
@@ -136,6 +138,11 @@ a:hover {
   background-color: #ffff;
   height: 400px;
   padding: 20px;
-  box-shadow: rgba(0,0,0, .3) 0 3px 16px;
+  box-shadow: rgba(0, 0, 0, .3) 0 3px 16px;
   display: flex;
+}
+
+/* form section */
+form {
+  flex: 1;
 }
