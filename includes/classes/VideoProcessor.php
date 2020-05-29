@@ -34,7 +34,12 @@ class VideoProcessor {
         else if(!$this->isValidType($videoType)) {
             echo "Invalid file type";
             return false;
-        }     
+        } 
+        else if($this->hasError($data)){
+            echo "Error code : ". $data["error"];
+            return false;
+        }    
+        return true;
     }
 
     private function isValidSize($data){
@@ -44,6 +49,10 @@ class VideoProcessor {
     private function isValidType($type) {
         $lowercased = strtolower($type);
         return in_array($lowercased, $this->allowedTypes);
+    }
+
+    private function hasError($data){
+        return $data["error"] != 0;
     }
 }
 ?>
