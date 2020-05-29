@@ -4,10 +4,10 @@
         require_once("includes/classes/VideoProcessor.php");
 
 
-        // if(!isset($_POST["uploadButton"])) {
-        //     echo "No file sent to page.";
-        //     exit();
-        // }
+        if(!isset($_POST["uploadButton"])) {
+            echo "No file sent to page.";
+            exit();
+        }
 
         // 1) create file upload data
         $videoUpoadData = new VideoUploadData(
