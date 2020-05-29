@@ -1,9 +1,9 @@
 <?php
    
     class VideoUploadData {
-        private $videoDataArray,$title,$description,$categories,$privacy,$uploadedBy;
+        public $videoDataArray,$title,$description,$categories,$privacy,$uploadedBy;
         //constructor
-        function __construct($videoDataArray,$title,$description,$categories,$privacy,$uploadedBy){
+        public function __construct($videoDataArray,$title,$description,$categories,$privacy,$uploadedBy){
             $this->videoDataArray = $videoDataArray;
             $this->title = $title;
             $this->description = $description;

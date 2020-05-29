@@ -14,7 +14,7 @@
            $privacyInput = $this->createPrivacyInput();
            $categoriesInput = $this->createCategoriesInput();
            $uploadButton = $this->createUploadButton();
-           return "<form action ='processing.php' method='POST'>
+           return "<form action='processing.php' method='POST' enctype='multipart/form-data'>
                 $fileInput
                 $titleInput
                 $descriptionInput
@@ -54,7 +54,7 @@
         private function createCategoriesInput(){
                 
             $html = "<div class='form-group'>
-            <select class='form-control' name=CategoryInput>"; 
+            <select class='form-control' name=categoryInput>"; 
                 $query = $this->conn->prepare("SELECT * FROM categories");
                 $query->execute();
                    while($row = $query->fetch(PDO::FETCH_ASSOC)){
@@ -68,7 +68,8 @@
         } 
 
        private function createUploadButton(){
-           return "<button class='btn btn-primary' name='uplaodButton'>Upload</button>";
+       
+        return "<button type='submit' class='btn btn-primary' name='uploadButton'>Upload</button>";
        }
    }
 

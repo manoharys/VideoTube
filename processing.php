@@ -1,15 +1,27 @@
-<?php require_once('includes/header.php');
-      require_once('includes/classes/VideoUploadData.php');
-      require_once('includes/classes/videoProcessor.php');
+<?php 
+        require_once("includes/header.php");
+        require_once("includes/classes/VideoUploadData.php");
+        require_once("includes/classes/VideoProcessor.php");
 
-            if(!isset($_POST['uploadButton'])){
-            echo "File not found or uploaded";
-            }
-        
-        //1) creating file upload data
-            $videoUploadData = new VideoUploadData($__POST['fileInput'],$__POST['titleInput'],$__POST['descriptionInput'],$__POST['CategoryInput'],$__POST['PrivacyInput'],"Replace This");
 
-        //2) Processin the upladed data
-            $videoProcessor = new VideoProcessor($conn);
-            $wasSuccessfull = $videoProcessor->upload($videoUploadData);   
+        // if(!isset($_POST["uploadButton"])) {
+        //     echo "No file sent to page.";
+        //     exit();
+        // }
+
+        // 1) create file upload data
+        $videoUpoadData = new VideoUploadData(
+                                    $_FILES["fileInput"], 
+                                    $_POST["titleInput"],
+                                    $_POST["descriptionInput"],
+                                    $_POST["privacyInput"],
+                                    $_POST["categoryInput"],
+                                    "REPLACE-THIS"    
+                                );
+
+        // 2) Process video data (upload)
+        $videoProcessor = new VideoProcessor($conn);
+        $wasSuccessful = $videoProcessor->upload($videoUpoadData);
+
+
 ?>
