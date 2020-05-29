@@ -3,7 +3,7 @@ class VideoProcessor {
 
     private $conn;
     private $sizeLimit = 50000000;
-    private $allowedTypes = array("mp4", "flv", "webm", "mkv", "vob", "ogv", "ogg", "avi", "wmv", "mov", "mpeg", "mpg");
+    private $allowedTypes = array( "mp4", "flv", "webm", "mkv", "vob", "ogv", "ogg", "avi", "wmv", "mov", "mpeg", "mpg");
 
     public function __construct($conn) {
         $this->conn = $conn;
@@ -22,6 +22,13 @@ class VideoProcessor {
         //checking the size of the video
         $isValidData = $this->processData($videoData,$tempFilePath);
 
+        if(!$isValidData){
+            return false;
+        }
+
+        if(move_uploaded_file($videoData["tmp_name"],$tempFilePath)){
+            echo "file moved succefully";
+        }
         //echo $tempFilePath;
     }
 
