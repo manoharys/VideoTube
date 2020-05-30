@@ -25,9 +25,15 @@ class VideoProcessor {
         if(!$isValidData){
             return false;
         }
-
+       
         if(move_uploaded_file($videoData["tmp_name"],$tempFilePath)){
-            echo "file moved succefully";
+           // echo "file moved succefully";
+           $finalFilePath = $targetDir . uniqid() . "mp4";
+
+           if(!$this->insertVideoData($videoUploadData,$finalFilePath)){
+               echo "Insert Query failed";
+               return false;
+           }
         }
         //echo $tempFilePath;
     }
@@ -50,7 +56,7 @@ class VideoProcessor {
     }
 
     private function isValidSize($data){
-        return $data['size'] <=$this->sizeLimit;
+        return $data['size'] <= $this->sizeLimit;
     }
 
     private function isValidType($type) {
@@ -60,6 +66,10 @@ class VideoProcessor {
 
     private function hasError($data){
         return $data["error"] != 0;
+    }
+
+    private function insertVideoData($videoUploadData,$finalFilePath){
+        
     }
 }
 ?>
