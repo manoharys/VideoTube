@@ -4,9 +4,11 @@ class VideoProcessor {
     private $conn;
     private $sizeLimit = 50000000;
     private $allowedTypes = array( "mp4", "flv", "webm", "mkv", "vob", "ogv", "ogg", "avi", "wmv", "mov", "mpeg", "mpg");
+    private $ffmpeg;
 
     public function __construct($conn) {
         $this->conn = $conn;
+        $this->ffmpeg= realpath("ffmpeg/bin/ffmpeg.exe");
     }
 
     public function upload($videoUploadData) {
@@ -18,7 +20,7 @@ class VideoProcessor {
         //uploads/videos/5aa3e9343c9ffdogs_playing.flv
 
         $tempFilePath = str_replace(" ", "_", $tempFilePath);
-        
+        echo "$tempFilePath";
         //checking the size of the video
         $isValidData = $this->processData($videoData,$tempFilePath);
 
@@ -29,7 +31,7 @@ class VideoProcessor {
         if(move_uploaded_file($videoData["tmp_name"],$tempFilePath)){
            // echo "file moved succefully";
            $finalFilePath = $targetDir . uniqid() . "mp4";
-
+        echo "$finalFilePath";
            if(!$this->insertVideoData($videoUploadData,$finalFilePath)){
                echo "Insert Query failed";
                return false;
@@ -80,6 +82,11 @@ class VideoProcessor {
         $query->bindParam(":filePath",$finalFilePath);
 
         return $query->execute();
+
+    }
+
+    //Converting the videos to MP3 format
+    private function convertVideoMp3($tempFilePath,$finalFilePath){
 
     }
 }
