@@ -67,9 +67,20 @@ class VideoProcessor {
     private function hasError($data){
         return $data["error"] != 0;
     }
-
+     
+    //Inserting the data to the database..
     private function insertVideoData($videoUploadData,$finalFilePath){
-        
+        $query = $this->conn->prepare("INSERT INTO videos(title,uploadedBy,description,category,privacy,filePath)
+                                       VALUES(:title,:uploadedBy,:description,:category,:privacy,:filePath)");
+        $query->bindParam(":title",$videoUploadData->title);
+        $query->bindParam(":uploadedBy",$videoUploadData->uploadedBy);
+        $query->bindParam(":description",$videoUploadData->description);
+        $query->bindParam(":category",$videoUploadData->categories);
+        $query->bindParam(":privacy",$videoUploadData->privacy);
+        $query->bindParam(":filePath",$finalFilePath);
+
+        return $query->execute();
+
     }
 }
 ?>
