@@ -4,11 +4,11 @@ class VideoProcessor {
     private $conn;
     private $sizeLimit = 50000000;
     private $allowedTypes = array( "mp4", "flv", "webm", "mkv", "vob", "ogv", "ogg", "avi", "wmv", "mov", "mpeg", "mpg");
-    private $ffmpeg;
+    private $ffmpegPath;
 
     public function __construct($conn) {
         $this->conn = $conn;
-        $this->ffmpeg= realpath("ffmpeg/bin/ffmpeg.exe");
+        $this->ffmpegPath = realpath("ffmpeg/bin/ffmpeg.exe");
     }
 
     public function upload($videoUploadData) {
@@ -24,18 +24,24 @@ class VideoProcessor {
         //checking the size of the video
         $isValidData = $this->processData($videoData,$tempFilePath);
 
-        if(!$isValidData){
-            return false;
-        }
+            if(!$isValidData){
+                return false;
+            }
        
-        if(move_uploaded_file($videoData["tmp_name"],$tempFilePath)){
-           // echo "file moved succefully";
-           $finalFilePath = $targetDir . uniqid() . "mp4";
-        echo "$finalFilePath";
-           if(!$this->insertVideoData($videoUploadData,$finalFilePath)){
-               echo "Insert Query failed";
-               return false;
-           }
+            if(move_uploaded_file($videoData["tmp_name"],$tempFilePath)){
+            // echo "file moved succefully";
+            $finalFilePath = $targetDir . uniqid() . "mp4";
+            
+
+            if(!$this->insertVideoData($videoUploadData,$finalFilePath)){
+                echo "Insert Query failed\n";
+                return false;
+            }
+        //    if(!$this->convertVideoMp4($tempFilePath,$finalFilePath)){  
+        //        echo "upload failed\n";
+        //        return false;   
+        //    }  
+
         }
         //echo $tempFilePath;
     }
@@ -85,9 +91,22 @@ class VideoProcessor {
 
     }
 
-    //Converting the videos to MP3 format
-    private function convertVideoMp3($tempFilePath,$finalFilePath){
+    //Converting the videos to MP4 format
+    // private function convertVideoMp4($tempFilePath,$finalFilePath){
+    //     $cmd = "$this->ffmpegPath -i $tempFilePath $finalFilePath 2>&1";
+         
+    //      $outputLog = array();
+    //      exec($cmd,$outputLog,$returnCode);
 
-    }
+    //      if($returnCode !=0 ){
+    //          //Command failed
+    //          foreach($outputLog as $line){
+    //              echo $line . "<br>";
+    //          }
+    //          return false;
+    //      }
+        
+    //      return true;
+    // }
 }
 ?>
