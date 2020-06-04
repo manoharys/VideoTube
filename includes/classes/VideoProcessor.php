@@ -42,7 +42,8 @@ class VideoProcessor {
         //        return false;   
         //    }
         
-             if(!$this->generateThumbnails($tempFilePath)){
+             if(!$this->generateThumbnails($finalFilePath)){
+                 echo "couldn't generate thumbnail";
                  return false;
              }
 
@@ -121,12 +122,21 @@ class VideoProcessor {
         $pathToThumbnail = "uploads/videos/thumbnails";
         
         $duration = $this->getVideoDuration($filePath);
-
+        
+        $videoId = $this->conn->lastInsertId();
+        $this->upadateDuration($duration,$videoId);
         echo "duration: $duration";
     }
 
     private function getVideoDuration($filePath) {
         return shell_exec("$this->ffprobePath -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 $filePath");
+    }
+
+    private function upadateDuration($duration, $videoId){
+        $hours = floor($duration / 3600);
+        $minutes = floor(($duration - ($hours*3600)) / 60);
+        $seconds = floor($duration % 60);
+
     }
 }
 ?>
