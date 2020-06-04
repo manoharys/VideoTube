@@ -140,10 +140,11 @@ class VideoProcessor {
 
         echo " Generating the video duration  $hours.$mins.$secs";
         
+        
         $hours = ($hours < 1) ? "" : $hours . ":";
         $mins = ($mins < 10) ? "0" . $mins . ":" : $mins . ":";
         $secs = ($secs < 10) ? "0" . $secs : $secs;
-
+        
         $duration = $hours.$mins.$secs;
 
         $query = $this->conn->prepare("UPDATE videos SET duration=:duration WHERE id=:videoId");
