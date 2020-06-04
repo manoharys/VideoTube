@@ -42,7 +42,7 @@ class VideoProcessor {
         //        return false;   
         //    }
         
-             if(!$this->generateThumbnails($finalFilePath)){
+             if(!$this->generateThumbnails($tempFilePath)){
                  echo "couldn't generate thumbnail";
                  return false;
              }
@@ -122,10 +122,10 @@ class VideoProcessor {
         $pathToThumbnail = "uploads/videos/thumbnails";
         
         $duration = $this->getVideoDuration($filePath);
-        
+        echo "duration of the videoosssss $duration";
         $videoId = $this->conn->lastInsertId();
         $this->upadateDuration($duration,$videoId);
-        echo "duration: $duration";
+
     }
 
     private function getVideoDuration($filePath) {
@@ -133,10 +133,23 @@ class VideoProcessor {
     }
 
     private function upadateDuration($duration, $videoId){
+        $duration = (int)$duration;
         $hours = floor($duration / 3600);
-        $minutes = floor(($duration - ($hours*3600)) / 60);
-        $seconds = floor($duration % 60);
+        $mins = floor(($duration - ($hours*3600)) / 60);
+        $secs = floor($duration % 60);
 
+        echo " Generating the video duration  $hours.$mins.$secs";
+        
+        $hours = ($hours < 1) ? "" : $hours . ":";
+        $mins = ($mins < 10) ? "0" . $mins . ":" : $mins . ":";
+        $secs = ($secs < 10) ? "0" . $secs : $secs;
+
+        $duration = $hours.$mins.$secs;
+
+        $query = $this->conn->prepare("UPDATE videos SET duration=:duration WHERE id=:videoId");
+        $query->bindParam(":duration", $duration);
+        $query->bindParam(":videoId", $videoId);
+        $query->execute();
     }
 }
 ?>
