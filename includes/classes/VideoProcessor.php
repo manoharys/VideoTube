@@ -50,6 +50,7 @@ class VideoProcessor {
              return true;
         }
         //echo $tempFilePath;
+        
     }
 
     private function processData($data,$filePath){
@@ -123,7 +124,7 @@ class VideoProcessor {
         $pathToThumbnail = "uploads/videos/thumbnails";
         
         $duration = $this->getVideoDuration($filePath);
-        echo "duration of the video $duration";
+        //echo "duration of the video $duration";
         $videoId = $this->conn->lastInsertId();
         $this->upadateDuration($duration,$videoId);
 
