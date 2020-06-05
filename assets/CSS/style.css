@@ -134,9 +134,10 @@ a:hover {
 /* Upload content ---> column */
 
 .column {
-  flex: 1;
+  flex-grow: 1;
   background-color: #ffff;
   padding: 20px;
+  min-height: 300px;
   box-shadow: rgba(0, 0, 0, .3) 0 3px 16px;
   display: flex;
 }
@@ -144,4 +145,28 @@ a:hover {
 /* form section */
 form {
   flex: 1;
+}
+
+
+/* SignIN page */
+
+.signInContainer {
+  background-color: #efefee;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signInContainer .header img {
+  width: 100px;
+}
+
+.signInContainer .column{
+  flex-grow: 0;
+  flex-direction: column;
+  padding:20px 40px;
+  width:450px;
+  max-height: 100%;
+  overflow-y: auto;
 }
