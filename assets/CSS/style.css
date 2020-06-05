@@ -162,11 +162,28 @@ form {
   width: 100px;
 }
 
-.signInContainer .column{
+.signInContainer .column {
   flex-grow: 0;
   flex-direction: column;
-  padding:20px 40px;
-  width:450px;
+  padding: 20px 40px;
+  width: 450px;
   max-height: 100%;
   overflow-y: auto;
+}
+
+.signInContainer .column .header {
+  padding: 20px 0px;
+}
+
+.signInContainer .column h3 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+  padding-bottom: 0;
+  padding-top: 16px;
+  line-height: 34px;
+}
+
+.signInContainer .column span {
+  font-size: 14px;
 }
