@@ -44,7 +44,7 @@
                    <input type="email" name="email2" placeholder="confirm email" autocomplete='off' required>
                    <input type="password" name="password" placeholder="password" autocomplete='off' required>
                    <input type="password" name="password2" placeholder="password" autocomplete='off' required>
-                   <input type="submit" name="submitButton" value="SUBMIT">
+                   <input type="submit" class="btn btn-primary" name="submitButton" value="SUBMIT">
 
                 </form>
             </div>

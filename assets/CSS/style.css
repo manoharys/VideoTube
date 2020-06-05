@@ -187,3 +187,24 @@ form {
 .signInContainer .column span {
   font-size: 14px;
 }
+
+.signInContainer .column form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signInContainer .column form input[type="text"],
+.signInContainer .column form input[type="email"],
+.signInContainer .column form input[type="password"] {
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px solid #dedede;
+  padding: 10px 0;
+}
+
+.signInContainer .column form input[type="submit"] {
+  height: 40px;
+  width: 100px;
+  font-weight: 500;
+  margin: 15px 0;
+}
