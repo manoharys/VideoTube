@@ -1,32 +1,27 @@
 <?php 
   require_once("includes/config.php");
-  require_once("includes/classes/formSanitizer.php");
+  require_once("includes/classes/FormSanitizer.php");
+  require_once("includes/classes/Account.php");
 
+  $account = new Account($conn);
 
   if(isset($_POST["submitButton"])){
       //firstName & lastName
-      $firstName = formSanitizer::sanitizingFormString($_POST["firstName"]);
-      $lastName = formSanitizer::sanitizingFormString($_POST["lastName"]);
+      $firstName = FormSanitizer::sanitizingFormString($_POST["firstName"]);
+      $lastName = FormSanitizer::sanitizingFormString($_POST["lastName"]);
   
       //Username
-      $username = formSanitizer::sanitizingFormUser($_POST["username"]);
+      $username = FormSanitizer::sanitizingFormUser($_POST["username"]);
 
       //emails
-      $email = formSanitizer::sanitizingFormEmail($_POST["email"]);
-      $email2 = formSanitizer::sanitizingFormEmail($_POST["email2"]);
+      $email = FormSanitizer::sanitizingFormEmail($_POST["email"]);
+      $email2 = FormSanitizer::sanitizingFormEmail($_POST["email2"]);
 
       //password
-      $password = formSanitizer::sanitizingFormPassword($_POST["password"]);
-      $password2 = formSanitizer::sanitizingFormPassword($_POST["password2"]);
-
-      echo "$firstName <br>";
-      echo "$lastName </br>";
-      echo "$username </br>";
-      echo "$email </br>";
-      echo "$email2 </br>";
-      echo "$password </br>";
-      echo "$password2 </br>";
-
+      $password = FormSanitizer::sanitizingFormPassword($_POST["password"]);
+      $password2 = FormSanitizer::sanitizingFormPassword($_POST["password2"]);
+     
+      $account->register($firstName, $lastName, $username, $email, $email2, $password, $password2);
 
   }
 
