@@ -1,9 +1,20 @@
 <?php 
   require_once("includes/config.php");
   if(isset($_POST["submitButton"])){
-      echo "form submitted";
+      $firstName = sanitizingFormString($_POST["firstName"]);
+      echo $firstName;
   }
 
+  function sanitizingFormString($inputString){
+      $inputString  = strip_tags($inputString);
+      $inputString =  str_replace(" " , "", $inputString);
+      $inputString = strtolower($inputString);
+      $inputString= ucfirst($inputString);
+
+      return $inputString;
+  }
+  
+  
 ?>
 
 <!DOCTYPE html>
