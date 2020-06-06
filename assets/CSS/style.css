@@ -184,7 +184,7 @@ form {
   line-height: 34px;
 }
 
-.signInContainer .column span {
+.signInContainer .column .header span {
   font-size: 14px;
 }
 
@@ -219,4 +219,11 @@ form {
 .signInContainer .column .loginMessage {
   font-weight: 400;
   font-size: 12px;
+}
+
+.errorMessage {
+  color: rgb(247, 0, 0);
+  font-weight: 400;
+  font-size: 13px;
+
 }
