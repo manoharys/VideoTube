@@ -1,18 +1,36 @@
 <?php 
   require_once("includes/config.php");
+  require_once("includes/classes/formSanitizer.php");
+
+
   if(isset($_POST["submitButton"])){
-      $firstName = sanitizingFormString($_POST["firstName"]);
-      echo $firstName;
+      //firstName & lastName
+      $firstName = formSanitizer::sanitizingFormString($_POST["firstName"]);
+      $lastName = formSanitizer::sanitizingFormString($_POST["lastName"]);
+  
+      //Username
+      $username = formSanitizer::sanitizingFormUser($_POST["username"]);
+
+      //emails
+      $email = formSanitizer::sanitizingFormEmail($_POST["email"]);
+      $email2 = formSanitizer::sanitizingFormEmail($_POST["email2"]);
+
+      //password
+      $password = formSanitizer::sanitizingFormPassword($_POST["password"]);
+      $password2 = formSanitizer::sanitizingFormPassword($_POST["password2"]);
+
+      echo "$firstName <br>";
+      echo "$lastName </br>";
+      echo "$username </br>";
+      echo "$email </br>";
+      echo "$email2 </br>";
+      echo "$password </br>";
+      echo "$password2 </br>";
+
+
   }
 
-  function sanitizingFormString($inputString){
-      $inputString  = strip_tags($inputString);
-      $inputString =  str_replace(" " , "", $inputString);
-      $inputString = strtolower($inputString);
-      $inputString= ucfirst($inputString);
 
-      return $inputString;
-  }
   
   
 ?>
@@ -35,7 +53,7 @@
 
     <!-- Jquery CDN-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    <script src="https://cdn.jsdelivr.net</br>pm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
