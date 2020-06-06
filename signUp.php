@@ -28,9 +28,10 @@
      $wasSuccessful = $account->register($firstName, $lastName, $username, $email, $email2, $password, $password2);
       
      if($wasSuccessful){
-       //success
-       //Redirect to the index page
-       
+        echo "Success";
+     }
+     else{
+       echo "Failed";
      }
   }
 

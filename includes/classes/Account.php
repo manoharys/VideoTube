@@ -19,16 +19,31 @@
 
       //checking whether errorArray is empty or not. If it is empty then no errors return true.
           if(empty($this->errorArray)){
-             $this->insertUserDetails($fn, $ln, $un, $em, $pw);
+            return $this->insertUserDetails($fn, $ln, $un, $em, $pw);
           }
           else{
             return false;
           }
       }
       
-      private function insertUserDetails($fn, $ln, $un, $em, $pw){
-      
-         return true;
+      public function insertUserDetails($fn, $ln, $un, $em, $pw){
+         
+        //hashing password
+        $pw = hash("sha512",$pw);
+        $profilePic = "assets/images/profilePictures/default.png";
+
+        $query = $this->conn->prepare("INSERT INTO users (firstname, lastname, username, email, password, profile)
+                                      VALUES (:fn, :ln, :un, :em, :pw, :profilePic)");
+        $query->bindParam(":fn",$fn);
+        $query->bindParam(":ln",$ln);
+        $query->bindParam(":un",$un);
+        $query->bindParam(":em",$em);
+        $query->bindParam(":pw",$pw);
+        $query->bindParam(":profilePic",$profilePic);
+         
+       $query->execute();
+       
+       return true;
       }
 
 
