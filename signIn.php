@@ -32,10 +32,16 @@
              <div class="column">
                 <div class="header">
                 <img src="./assets/images/icons/VideoTubeLogo.png" title="VideoTube home" alt="site-logo">
-                 <h3>Sign Up</h3>
+                 <h3>Sign In</h3>
                  <span>to continue to VideoTube</span>
                 </div>
-                <div class="loginForm"></div>
+                <div class="loginForm">
+                <form action="signIn.php" method="POST">
+                   <input type="text" name="username" placeholder="User name" autocomplete='off' required>                   
+                   <input type="password" name="password" placeholder="password" autocomplete='off' required>
+                   <input type="submit" class="btn btn-primary" name="submitButton" value="SUBMIT">
+                </form>
+                </div>
                 <a href="signUp.php" class="loginMessage">Need an account? SignUp here!</a>
              </div>
          </div>

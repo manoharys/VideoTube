@@ -36,7 +36,7 @@
                 <span>to continue to VideoTube</span>
             </div>
             <div class="loginForm">
-                <form action="signIn.php" method="POST">
+                <form action="signUp.php" method="POST">
                    <input type="text" name="firstName" placeholder="first name" autocomplete='off' required>
                    <input type="text" name="lastName" placeholder="last name" autocomplete='off' required>
                    <input type="text" name="username" placeholder="User name" autocomplete='off' required>
