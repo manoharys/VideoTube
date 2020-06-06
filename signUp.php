@@ -86,9 +86,15 @@
                    <!-- displaying error message if any -->
                    <?php 
                      echo $account->getError(Constants::$usernameCharacter);
-                     echo $account->getError(Constants::$usernameTaken);
+                     echo $account->getError(Constants::$usernameTaken); 
                    ?>
                    <input type="text" name="username" placeholder="User name" autocomplete='off' required>
+
+                   <!-- displaying error message if any -->
+                   <?php 
+                     echo $account->getError(Constants::$emailDoNotMatch);
+                     echo $account->getError(Constants::$emailTaken); 
+                   ?>
                    <input type="email" name="email" placeholder="email" autocomplete='off' required>
                    <input type="email" name="email2" placeholder="confirm email" autocomplete='off' required>
                    <input type="password" name="password" placeholder="password" autocomplete='off' required>

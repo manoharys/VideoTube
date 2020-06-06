@@ -13,6 +13,7 @@
           $this->validateFirstName($fn);
           $this->validatelastName($ln);
           $this->validateusername($un);
+          $this->validateEmail($em, $em2);
       }
 
       /*The only validation to do on firstName & lastName is just to make sure 
@@ -46,6 +47,27 @@
         if($query->rowCount() != 0){
           array_push($this->errorArray,Constants::$usernameTaken);      
         }
+      }
+
+      /*validating emails:-
+        1) Check whether both email matches
+        2) Check whether email is already in use.
+      */
+      private function validateEmail($em,$em2){
+
+        if($em != $em2){
+          array_push($this->errorArray,Constants::$emailDoNotMatch);
+          return;
+        }
+
+        $query = $this->conn->prepare("SELECT email FROM users WHERE email = :em");
+        $query->bindParam(":em",$em);
+        $query->execute();
+
+        if($query->rowCount() != 0 ){
+          array_push($this->errorArray,Constants::$emailTaken);
+        }
+
       }
       
   
