@@ -14,7 +14,7 @@
           $this->validateFirstName($fn);
       }
 
-      /*The only validation to do on firstName is just to make sure 
+      /*The only validation to do on firstName & lastName is just to make sure 
         it as certain lenght.
         just for now character length ranges between 2 and 25
       */
@@ -23,7 +23,11 @@
               array_push($this->errorArray,Constants::$firstNameCharacter);        
           }
       }
-
+      private function validatelastName($fn){
+        if(strlen($ln) > 25 || strlen($ln) < 1){
+            array_push($this->errorArray,Constants::$lastNameCharacter);        
+        }
+    }
       //Display error message to the user
       public function getError($error){
         if(in_array($error,$this->errorArray)){

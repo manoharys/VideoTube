@@ -75,6 +75,12 @@
                      echo $account->getError(Constants::$firstNameCharacter);
                    ?>
                    <input type="text" name="firstName" placeholder="first name" autocomplete='off' required>
+
+                   
+                   <!-- displaying error message if any -->
+                   <?php 
+                     echo $account->getError(Constants::$lastNameCharacter);
+                   ?>
                    <input type="text" name="lastName" placeholder="last name" autocomplete='off' required>
                    <input type="text" name="username" placeholder="User name" autocomplete='off' required>
                    <input type="email" name="email" placeholder="email" autocomplete='off' required>
