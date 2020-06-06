@@ -1,4 +1,9 @@
-<?php require_once("includes/config.php");
+<?php 
+  require_once("includes/config.php");
+  if(isset($_POST["submitButton"])){
+      echo "form submitted";
+  }
+
 ?>
 
 <!DOCTYPE html>

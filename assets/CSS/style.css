@@ -200,6 +200,13 @@ form {
   border: none;
   border-bottom: 1px solid #dedede;
   padding: 10px 0;
+  outline: none;
+}
+
+.signInContainer .column form input[type="text"]:hover,
+.signInContainer .column form input[type="email"]:hover,
+.signInContainer .column form input[type="password"]:hover {
+  background-color: #dedede1a;
 }
 
 .signInContainer .column form input[type="submit"] {
@@ -209,7 +216,7 @@ form {
   margin: 15px 0;
 }
 
-.signInContainer .column .loginMessage{
+.signInContainer .column .loginMessage {
   font-weight: 400;
   font-size: 12px;
 }
