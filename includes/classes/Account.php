@@ -15,7 +15,25 @@
           $this->validateusername($un);
           $this->validateEmail($em, $em2);
           $this->validatePassword($pw, $pw2);
+           
+
+      //checking whether errorArray is empty or not. If it is empty then no errors return true.
+          if(empty($this->errorArray)){
+             $this->insertUserDetails($fn, $ln, $un, $em, $pw);
+          }
+          else{
+            return false;
+          }
       }
+      
+      private function insertUserDetails($fn, $ln, $un, $em, $pw){
+      
+         return true;
+      }
+
+
+
+      /* -------------------------validation functions ---------------------- */
 
       /*The only validation to do on firstName & lastName is just to make sure 
         it as certain lenght.
