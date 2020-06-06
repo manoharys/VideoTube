@@ -14,6 +14,7 @@
           $this->validatelastName($ln);
           $this->validateusername($un);
           $this->validateEmail($em, $em2);
+          $this->validatePassword($pw, $pw2);
       }
 
       /*The only validation to do on firstName & lastName is just to make sure 
@@ -67,12 +68,30 @@
         if($query->rowCount() != 0 ){
           array_push($this->errorArray,Constants::$emailTaken);
         }
+      }
 
+      /*
+        1) Check whether both password matches
+        2) Make sure password contains only alphnumeric characters
+        3) Check whether passwords are in certain ranges(using between 7 - 25)
+      */
+      private function validatePassword($pw, $pw2){
+
+        if($pw != $pw2){
+          array_push($this->errorArray, Constants::$passwordDoNotMatch);
+          return;
+        }
+
+        if(preg_match("/[^A-Za-z0-9]/", $pw)){
+          array_push($this->errorArray, Constants::$passwordNotAlphaNumeric);
+          return;
+        }
+
+        if(strlen($pw)>25 || strlen($pw)<7){
+          array_push($this->errorArray, Constants::$passwordLength);
+        }
       }
       
-  
-
-
 
       //Display error message to the user
       public function getError($error){

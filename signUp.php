@@ -97,8 +97,16 @@
                    ?>
                    <input type="email" name="email" placeholder="email" autocomplete='off' required>
                    <input type="email" name="email2" placeholder="confirm email" autocomplete='off' required>
+
+                    <!-- displaying error message if any -->
+                    <?php 
+                     echo $account->getError(Constants::$passwordDoNotMatch);
+                     echo $account->getError(Constants::$passwordNotAlphaNumeric); 
+                     echo $account->getError(Constants::$passwordLength); 
+                   ?>
                    <input type="password" name="password" placeholder="password" autocomplete='off' required>
                    <input type="password" name="password2" placeholder="password" autocomplete='off' required>
+                   
                    <input type="submit" class="btn btn-primary" name="submitButton" value="SUBMIT">
 
                 </form>
