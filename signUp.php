@@ -48,7 +48,7 @@
 
                 </form>
             </div>
-            <a href="signIn.php">Already have an account? Sign in here!</a>
+            <a href="signIn.php" class="loginMessage">Already have an account? Sign in here!</a>
         </div>
     </div>
 </body>

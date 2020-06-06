@@ -208,3 +208,8 @@ form {
   font-weight: 500;
   margin: 15px 0;
 }
+
+.signInContainer .column .loginMessage{
+  font-weight: 400;
+  font-size: 12px;
+}

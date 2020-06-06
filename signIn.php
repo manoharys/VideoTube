@@ -36,7 +36,7 @@
                  <span>to continue to VideoTube</span>
                 </div>
                 <div class="loginForm"></div>
-                <a href="signUp.php">Need an account? SignUp here!</a>
+                <a href="signUp.php" class="loginMessage">Need an account? SignUp here!</a>
              </div>
          </div>
    </body>
