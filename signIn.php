@@ -4,19 +4,22 @@
   require_once("includes/classes/Constants.php");
   require_once("includes/classes/FormSanitizer.php");
   
+  $account = new Account($conn);
+
   if(isset($_POST["submitButton"])){
     $username = FormSanitizer::sanitizingFormUser($_POST["username"]);
     $password = FormSanitizer::sanitizingFormPassword($_POST["password"]);
 
-    $wasSuccessful = $account->login($username,$$password);
+    $wasSuccessful = $account->login($username,$password);
       
     if($wasSuccessful){
        $_SESSION["userLoggedIn"] = $username;
        header("Location: index.php");
     }
     else{
-      echo "login failed";
+       echo "Login failed";
     }
+  
 
   }
 
@@ -63,7 +66,13 @@
                 </div>
                 <div class="loginForm">
                 <form action="signIn.php" method="POST">
+                   <!-- displaying error message if any -->
+                   <?php 
+                     echo $account->getError(Constants::$UserLoginFailed);
+                   ?>
                    <input type="text" name="username" placeholder="User name" autocomplete='off'  value="<?php getInputValues('username') ?>" required>                   
+             
+                 
                    <input type="password" name="password" placeholder="password" autocomplete='off'  required>
                    <input type="submit" class="btn btn-primary" name="submitButton" value="SUBMIT">
                 </form>

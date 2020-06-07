@@ -10,5 +10,6 @@
        public static $passwordDoNotMatch = "Password doesn't match";
        public static $passwordNotAlphaNumeric = "Password must be alphaNumeric";
        public static $passwordLength = "Password lenght must between 7 and 25";
+       public static $UserLoginFailed = "Username or password is incorrect!";
    }
 ?>

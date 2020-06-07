@@ -9,6 +9,26 @@
           $this->conn = $conn;
       }
        
+      //User signIn login validation part
+      public function login($un, $pw){
+        $pw = hash("sha512",$pw);
+
+        $query = $this->conn->prepare("SELECT * from users WHERE username = :un AND password = :pw");
+        $query->bindParam(":un", $un);
+        $query->bindParam(":pw", $pw);
+
+        $query->execute();
+
+        if($query->rowCount() == 1){
+          return true;
+        }
+        else{
+          array_push($this->errorArray,Constants::$UserLoginFailed);
+          return false;
+        }
+      }
+     /*------------------------------------------------------*/
+
       public function register($fn, $ln, $un, $em, $em2, $pw, $pw2){
           $this->validateFirstName($fn);
           $this->validatelastName($ln);
