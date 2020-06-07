@@ -2,7 +2,7 @@
   require_once("includes/config.php");
   require_once("includes/classes/User.php");
   
-  $userNameLogggedIn = isset($_SESSION["userLoggedIn"]) ? $_SESSION["userLoggedIn"] : "";
+  $userNameLogggedIn = isset($_SESSION["userLoggedIn"]) ? $_SESSION["userLoggedIn"] : " ";
   $userNameLogggedInObj = new User($conn, $userNameLogggedIn);
 
 ?>
