@@ -1,7 +1,26 @@
 <?php
  require_once("includes/config.php");
+  require_once("includes/classes/Account.php");
+  require_once("includes/classes/Constants.php");
+  require_once("includes/classes/FormSanitizer.php");
+  
+  if(isset($_POST["submitButton"])){
+    $username = FormSanitizer::sanitizingFormUser($_POST["username"]);
+    $password = FormSanitizer::sanitizingFormPassword($_POST["password"]);
 
- function getInputValues($name){
+    $wasSuccessful = $account->login($username,$$password);
+      
+    if($wasSuccessful){
+       $_SESSION["userLoggedIn"] = $username;
+       header("Location: index.php");
+    }
+    else{
+      echo "login failed";
+    }
+
+  }
+
+  function getInputValues($name){
     if(isset($_POST[$name])){
         echo $_POST[$name];
     }
