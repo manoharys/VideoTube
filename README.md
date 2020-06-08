@@ -50,13 +50,23 @@ VideoTube is a video uploading site containing standard features of YouTube that
    OR follow gitbash commands
 
 ```html
-   i>cd C:\\xampp\htdocs\
+     cd C:\\xampp\htdocs\
 
-   ii>git clone https://github.com/manoharys/VideoTube.git
+     git clone https://github.com/manoharys/VideoTube.git
 ```  
   - extract files in C:\xampp\htdocs.
 
   - open link localhost/phpmyadmin.
+  
+  - click on new at side navbar.
+
+  - give a database name as VideoTube and click import.
+
+  - browse the file in directory[VideoTUbe/database/videotube.sql].
+
+  - after importing successfully.
+
+  - open any browser and type http://localhost/VideoTube.
   
  [Back To The Top](#read-me-template)
 
