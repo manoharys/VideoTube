@@ -16,7 +16,7 @@
                                     $_POST["descriptionInput"],
                                     $_POST["privacyInput"],
                                     $_POST["categoryInput"],
-                                    "REPLACE-THIS"    
+                                    $userLoggedInObj->getUsername()  
                                 );
 
         // 2) Process video data (upload)
