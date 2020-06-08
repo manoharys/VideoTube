@@ -7,6 +7,7 @@
 
 - [Description](#description)
 - [How To Use](#how-to-use)
+- [Requirements](#requirements)
 
 
 ---
@@ -58,5 +59,15 @@ VideoTube is a video uploading site containing standard features of YouTube that
   - open link localhost/phpmyadmin.
   
  [Back To The Top](#read-me-template)
+
+---
+## Requirements
+:point_right: PHP 5.3 +
+
+:point_right: Mysql 5.0 +
+
+:point_right: PDO Extension in PHP
+
+:point_right: Web Browser FF17.0+, IE8+, Opera, Chrome .... TODO testing
 
 ---
