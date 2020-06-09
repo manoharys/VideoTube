@@ -1,4 +1,5 @@
 <?php 
+    require_once("includes/classes/VideoInfoControls.php");
    class VideoInfo{
 
      
@@ -11,13 +12,15 @@
     }
 
     public function create(){
-        return $this->getVideoPrimaryInfo() . $this->getVideoSecondaryInfo();        
-   }
+        $videoInfoControls = new VideoInfoControls($this->video, $this->userLoggedInObj);
+        return $this->getVideoPrimaryInfo(). $videoInfoControls->create() . $this->getVideoSecondaryInfo();        
+   
+     }
 
    private function getVideoPrimaryInfo(){
        $title = $this->video->getVideoTitle();
        $views = $this->video->getVideoViews();
-
+       
        return "<div class='videoInfo'>
                  <h1> $title</h1>
 

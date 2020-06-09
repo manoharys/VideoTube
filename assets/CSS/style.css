@@ -260,8 +260,8 @@ form {
   display: flex;
 }
 .videoInfo .bottomSection .viewCount{
-
   color:rgba(17,17, 17,.6);
   font-weight: 400;
   flex:1;
 }
+
