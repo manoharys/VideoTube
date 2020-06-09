@@ -4,9 +4,7 @@
    require_once("includes/classes/VideoPlayer.php");
    require_once("includes/classes/VideoInfo.php");
 
-?>
 
- <?php 
     if(!isset($_GET["id"])){
         echo "no url passed on to the page";
     }
@@ -15,6 +13,10 @@
     $video->increamentViews();
         
  ?>
+
+    
+
+
 
    <div class="watchLeftColumn">
        <?php 
