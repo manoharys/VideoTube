@@ -104,5 +104,9 @@ class Video {
  
         return $getData["count"];
      }
+
+     public function like(){
+         return "You liked OR disLiked the video";
+     }
 }
 ?>
