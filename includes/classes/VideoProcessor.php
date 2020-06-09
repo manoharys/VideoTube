@@ -34,7 +34,7 @@ class VideoProcessor {
             $finalFilePath = $targetDir . uniqid() . "mp4";
             
 
-            if(!$this->insertVideoData($videoUploadData,$finalFilePath)){
+            if(!$this->insertVideoData($videoUploadData,$tempFilePath)){
                 echo "Insert Query failed\n";
                 return false;
             }
