@@ -228,3 +228,16 @@ form {
   text-align: center;
 
 }
+
+.watchLeftColumn{
+  flex:1;
+}
+.watchLeftColumn .videoPlayer{
+  width:100%;
+}
+.suggestion{
+  max-width: 425px;
+  flex-grow: 1;
+  padding-left: 25px;
+  height: 100%;
+}

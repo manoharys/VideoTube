@@ -21,6 +21,9 @@
        ?>
    </div>
 
+   <div class="suggestion">
+   </div>
+
 
 <?php require_once('includes/footer.php') ?>
  
