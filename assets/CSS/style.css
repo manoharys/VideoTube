@@ -229,39 +229,41 @@ form {
 
 }
 
-.watchLeftColumn{
-  flex:1;
-}
-.watchLeftColumn .videoPlayer{
-  width:100%;
+.watchLeftColumn {
+  flex: 1;
 }
 
-.suggestion{
+.watchLeftColumn .videoPlayer {
+  width: 100%;
+}
+
+.suggestion {
   max-width: 425px;
   flex-grow: 1;
-  padding-left: 25px;
+  margin-left: 19px;
+  padding-left: 10px;
   height: 100%;
   background-color: #dededeee;
 }
 
-.videoInfo{
-  width:100%;
-  padding:20px 0 10px 0;
+.videoInfo {
+  width: 100%;
+  padding: 20px 0 10px 0;
 }
 
-.videoInfo h1{
-  overflow:hidden;
+.videoInfo h1 {
+  overflow: hidden;
   font-size: 15px;
   font-weight: 400;
   line-height: 14px;
 }
 
-.videoInfo .bottomSection{
+.videoInfo .bottomSection {
   display: flex;
 }
-.videoInfo .bottomSection .viewCount{
-  color:rgba(17,17, 17,.6);
-  font-weight: 400;
-  flex:1;
-}
 
+.videoInfo .bottomSection .viewCount {
+  color: rgba(17, 17, 17, .6);
+  font-weight: 400;
+  flex: 1;
+}

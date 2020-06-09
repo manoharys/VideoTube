@@ -1,4 +1,5 @@
 <?php 
+  require_once("includes/classes/ButtonProvider.php");
   class VideoInfoControls{
       
      
@@ -21,7 +22,7 @@
     }
 
     private function videoLikeButton(){
-        return "<button>LIKE</button>";
+        return ButtonProvider::createButton("Likeeee", "", "", "");
     }
     
     private function videoDisLikeButton(){

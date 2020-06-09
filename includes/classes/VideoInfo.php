@@ -12,20 +12,21 @@
     }
 
     public function create(){
-        $videoInfoControls = new VideoInfoControls($this->video, $this->userLoggedInObj);
-        return $this->getVideoPrimaryInfo(). $videoInfoControls->create() . $this->getVideoSecondaryInfo();        
+        return $this->getVideoPrimaryInfo(). $this->getVideoSecondaryInfo();        
    
      }
 
    private function getVideoPrimaryInfo(){
        $title = $this->video->getVideoTitle();
        $views = $this->video->getVideoViews();
-       
+       $videoInfoControls = new VideoInfoControls($this->video, $this->userLoggedInObj);
+       $controls = $videoInfoControls->create();       
        return "<div class='videoInfo'>
                  <h1> $title</h1>
 
                  <div class='bottomSection'> 
-                   <span class='viewCount'>$views</span> 
+                   <span class='viewCount'>$views</span>
+                   $controls
                  </div>
                </div>            
        ";
