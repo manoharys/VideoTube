@@ -20,9 +20,15 @@
            </div>
         ";
     }
-
+   
     private function videoLikeButton(){
-        return ButtonProvider::createButton("Likeeee", "", "", "");
+
+        $text = $this->video->getVideoLikes();
+        $videoId = $this->video->getVideoId();
+        $action = "likeVideo(this, $videoId)";
+        $class = "likeButton";
+        $imageSrc = "assets/images/icons/thumb-up.png";
+        return ButtonProvider::createButton($text, $imageSrc, $action, $class);
     }
     
     private function videoDisLikeButton(){
