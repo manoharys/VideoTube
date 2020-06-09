@@ -18,10 +18,13 @@
        $title = $this->video->getVideoTitle();
        $views = $this->video->getVideoViews();
 
-       return "<div>
-                 <h3> $title</h3>
-                 <div> $views </div>
-               </div>           
+       return "<div class='videoInfo'>
+                 <h1> $title</h1>
+
+                 <div class='bottomSection'> 
+                   <span class='viewCount'>$views</span> 
+                 </div>
+               </div>            
        ";
    }
 
