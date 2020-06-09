@@ -1,14 +1,14 @@
 <?php 
 
 
-class User {
+class Video {
     private $conn, $sqlData, $userLoggedInObj;
 
     public function __construct($conn, $input, $userLoggedInObj){
         $this->userLoggedInObj = $userLoggedInObj;
         $this->conn = $conn;
         
-        if(in_array($input)){
+        if(is_array($input)){
             $this->sqlData = $input;
         }
         else{
@@ -65,6 +65,18 @@ class User {
     
     public function getVideoDuration(){
         return $this->sqlData["duration"];
+    }
+
+    public function increamentViews(){
+         $videoId = $this->getVideoId();
+
+         $query = $this->conn->prepare("UPDATE videos set views = views + 1 WHERE id = :id");
+         $query->bindParam(":id",$videoId);
+
+         $query->execute();
+
+         $this->sqlData["views"] = $this->sqlData["views"] + 1;
+
     }
 }
 ?>
