@@ -2,6 +2,8 @@
    require_once('includes/header.php');
    require_once("includes/classes/Video.php");
    require_once("includes/classes/VideoPlayer.php");
+   require_once("includes/classes/VideoInfo.php");
+
 ?>
 
  <?php 
@@ -18,10 +20,14 @@
        <?php 
             $videoPlayer = new VideoPlayer($video);
             echo $videoPlayer->create(true);
+
+            $videoInfo = new VideoInfo($conn, $video, $userLoggedInObj);
+            echo $videoInfo->create();
        ?>
    </div>
 
    <div class="suggestion">
+      suggestions
    </div>
 
 

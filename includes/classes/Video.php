@@ -58,7 +58,7 @@ class Video {
     }
 
     
-    public function getVideoView(){
+    public function getVideoViews(){
         return $this->sqlData["views"];
     }
 
