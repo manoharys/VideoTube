@@ -116,9 +116,20 @@ class Video {
         $query->execute();
 
         if($query->rowCount() > 0){
-            return "Liked";
+            $query = $this->conn->prepare("DELETE FROM likes WHERE username = :username AND videoId = :videoId");
+            $query->bindParam(":username", $username);
+            $query->bindParam(":videoId", $videoId);
+
+            $query->execute();
+            
         }
         else{
+            $query = $this->conn->prepare("DELETE FROM DisLikes WHERE username = :username AND videoId = :videoId");
+            $query->bindParam(":username", $username);
+            $query->bindParam(":videoId", $videoId);
+
+            $query->execute();
+
             $query = $this->conn->prepare("INSERT INTO likes(username,videoId) VALUES(:username, :videoId)");
             $query->bindParam(":username", $username);
             $query->bindParam(":videoId", $videoId);
