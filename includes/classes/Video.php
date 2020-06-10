@@ -106,7 +106,27 @@ class Video {
      }
 
      public function like(){
-         return "You liked OR disLiked the video";
+        $videoId = $this->getVideoId();
+        $username = $this->userLoggedInObj->getUsername();
+        
+        $query = $this->conn->prepare("SELECT * FROM likes WHERE username=:username AND videoId=:videoId");
+        $query->bindParam(':username', $username);
+        $query->bindParam(':videoId', $videoId);
+
+        $query->execute();
+
+        if($query->rowCount() > 0){
+            return "Liked";
+        }
+        else{
+            $query = $this->conn->prepare("INSERT INTO likes(username,videoId) VALUES(:username, :videoId)");
+            $query->bindParam(":username", $username);
+            $query->bindParam(":videoId", $videoId);
+            
+            $query->execute();
+        }
+
+    
      }
 }
 ?>
