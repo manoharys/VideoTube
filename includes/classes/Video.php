@@ -92,7 +92,7 @@ class Video {
        return $getData["count"];
     }
 
-    public function getVideoDisLikes(){
+    public function getVideoDisLikes(){ 
         $query = $this->conn->prepare("SELECT COUNT(*) AS 'count' from DisLikes WHERE videoId = :videoId");
         $query->bindParam(":videoId",$videoId);
  
@@ -122,6 +122,11 @@ class Video {
 
             $query->execute();
             
+            $result = array(
+                "likes" => -1,
+                "disLikes" => 0
+            );
+            return json_encode($result);
         }
         else{
             $query = $this->conn->prepare("DELETE FROM DisLikes WHERE username = :username AND videoId = :videoId");
