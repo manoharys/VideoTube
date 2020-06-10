@@ -28,6 +28,10 @@
         $action = "likeVideo(this, $videoId)";
         $class = "likeButton";
         $imageSrc = "assets/images/icons/thumb-up.png";
+
+        if($this->video->wasLiked()){
+        $imageSrc = "assets/images/icons/thumb-up-active.png";
+        }
         return ButtonProvider::createButton($text, $imageSrc, $action, $class);
     }
     

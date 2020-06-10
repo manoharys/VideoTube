@@ -12,6 +12,16 @@ function likeVideo(button, videoId){
          console.log(result);
         
         updateLikeValue(likeButton.find(".text"), result.likes)
+        updateLikeValue(likeButton.find(".text"), result.disLikes)
+        
+        if(result.likes < 0){
+            likeButton.removeClass("active");
+            likeButton.find("img:first").attr("src","assets/images/icons/thumb-up.png");
+        }else{
+            likeButton.find("img:first").attr("src","assets/images/icons/thumb-up-active.png");
+        }
+         DisLikeButton.find("img:first").attr("src","assets/images/icons/thumb-up.png");
+
      });
     }
 
