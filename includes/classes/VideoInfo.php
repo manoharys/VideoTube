@@ -4,7 +4,7 @@
    class VideoInfo{
 
      
-    private $conn, $video, $userLoggedInObj;
+    private $conn, $video, $userLoggedInObj, $actionButton;
 
     public function __construct($conn, $video, $userLoggedInObj){
         $this->video = $video;
@@ -38,19 +38,27 @@
        $uploadDate = $this->video->getVideoUploadDate();
        $uploadedBy = $this->video->getVideoUploadedBy();
        $profileButton = ButtonProvider::createProfileButton($this->conn, $uploadedBy);
+    
+       if($uploadedBy == $this->userLoggedInObj->getUsername()){
+            $this->actionButton = ButtonProvider::createEditButton($this->video->getVideoId());
+       } 
+       else{
+           $this->actionButton= "";
+       }
 
        return "<div class='secondaryInfo'>
                  <div class='topRow'>
                    $profileButton
-                    <span class = 'owner>
-                       <a href='profile.php?username = $uploadedBy>
-                          $uploadedBy
+                    <span class = 'owner'>
+                       <a href='profile.php?username = $uploadedBy'>
+                           $uploadedBy
                        </a>
                     </span>
                     <span class = 'date'>
                        published on $uploadDate
                     </span>
                  </div>
+                 $this->actionButton
               </div>";
    }
 
