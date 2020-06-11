@@ -14,6 +14,18 @@
             ;
 
     }
+
+    public static function createProfileButton($conn, $uploadedBy){
+      $userObj = new User($conn, $uploadedBy);
+      $profilePic = $userObj->getUserProfilePic();
+      $link = "profile.php?username=$uploadedBy";
+
+      return "
+              <a href = '$link'>
+                <img src = '$profilePic'>
+              </a>
+            ";
+    }
   }
 
 ?>
