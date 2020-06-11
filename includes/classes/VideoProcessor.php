@@ -126,7 +126,7 @@ class VideoProcessor {
         $duration = $this->getVideoDuration($filePath);
         //echo "duration of the video $duration";
         $videoId = $this->conn->lastInsertId();
-        $this->upadateDuration($duration,$videoId);
+        $this->upadateDuration($duration,$videoId); 
 
         for($num = 1; $num <= $numThumbnails; $num++) {
             $imageName = uniqid() . ".jpg";

@@ -33,7 +33,7 @@
     </script>
 
     <!-- Custom JS files -->
-    <script src="./assets/JS/commonAction.js"></script>
+      <script src="./assets/JS/commonAction.js"></script>
       <script src = "./assets/JS/videoPlayerAction.js"></script>
 
 </head>
