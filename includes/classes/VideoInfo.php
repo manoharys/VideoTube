@@ -41,10 +41,15 @@
 
        return "<div class='secondaryInfo'>
                  <div class='topRow'>
-                   $description
-                   $uploadedBy
-                   $uploadDate
                    $profileButton
+                    <span class = 'owner>
+                       <a href='profile.php?username = $uploadedBy>
+                          $uploadedBy
+                       </a>
+                    </span>
+                    <span class = 'date'>
+                       published on $uploadDate
+                    </span>
                  </div>
               </div>";
    }
