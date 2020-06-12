@@ -38,5 +38,35 @@ class User {
     public function getUserEmail(){
         return $this->sqlData["email"];
     }  
+
+
+    //subscribers methods
+
+    public function isSubscribedTo($userTo){
+        $query = $this->conn->prepare("SELECT * FROM subscribers WHERE userTo = :userTo AND userFrom = :userFrom");
+        $query->bindParam(":userTo", $userTO);
+        $query->bindParam(":userFrom", $username);
+
+        $username = $this->getUsername();
+
+        $query->execute();
+
+        return $query->rowCount() > 0;
+    }
+
+    //subscribers count
+
+    public function getSubscriberCount(){
+        
+        $query = $this->conn->prepare("SELECT * FROM subscribers WHERE userTo = :userTo");
+        $query->bindParam(":userTo", $username);
+
+        $username = $this->getUsername();
+
+        $query->execute();
+
+        return $query->rowCount();
+    
+    }
 }
 ?>
