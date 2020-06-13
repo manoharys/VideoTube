@@ -50,6 +50,7 @@
        return "<div class='secondaryInfo'>
                  <div class='topRow'>
                    $profileButton
+                   <div class='uploadInfo'>
                     <span class = 'owner'>
                        <a href='profile.php?username = $uploadedBy'>
                            $uploadedBy
@@ -58,8 +59,12 @@
                     <span class = 'date'>
                        published on $uploadDate
                     </span>
-                 </div>
-                 $this->actionButton
+                   </div> 
+                   $this->actionButton
+                </div>
+              <div class='descriptionContainer'>
+                $description
+              </div>
               </div>";
    }
 

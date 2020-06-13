@@ -39,7 +39,7 @@
 
       return "
               <a href = '$link'>
-                <img src = '$profilePic'>
+                <img src = '$profilePic' class='profilePicture'>
               </a>
             ";
     }
