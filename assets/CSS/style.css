@@ -315,8 +315,7 @@ form {
   align-items: center;
   justify-content: center;
 }
-.subscribeButtonContainer .subscribe,
-. {
+.subscribeButtonContainer .subscribe {
   background-color: #f00;
   color:#fff;
   font-weight: 500;
@@ -353,4 +352,10 @@ form {
   padding-top: 15px;
   border-top:1px solid #dedede;
   border-bottom: 1px solid #dedede;
+}
+
+.secondaryInfo .owner a{
+  color:#000;
+  font-size: 18px;
+  font-weight: 600;
 }
