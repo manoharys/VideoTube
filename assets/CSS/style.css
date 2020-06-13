@@ -124,7 +124,6 @@ a:hover {
   padding: 10px 30px;
   flex: 1;
   display: flex;
-
 }
 
 #mainSectionContainer.leftPadding {
@@ -138,7 +137,7 @@ a:hover {
   background-color: #ffff;
   padding: 20px;
   min-height: 300px;
-  box-shadow: rgba(0, 0, 0, .3) 0 3px 16px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 3px 16px;
   display: flex;
 }
 
@@ -146,7 +145,6 @@ a:hover {
 form {
   flex: 1;
 }
-
 
 /* SignIN page */
 
@@ -226,7 +224,6 @@ form {
   font-weight: 400;
   font-size: 13px;
   text-align: center;
-
 }
 
 .watchLeftColumn {
@@ -263,7 +260,7 @@ form {
 }
 
 .videoInfo .bottomSection .viewCount {
-  color: rgba(17, 17, 17, .6);
+  color: rgba(17, 17, 17, 0.6);
   font-weight: 400;
   flex: 1;
 }
@@ -307,11 +304,53 @@ form {
   margin-right: 15px;
 }
 
-.secondaryInfo .topRow .uploadInfo{
-     flex:1;
-     display: flex;
-     flex-direction: column;
-     
+.secondaryInfo .topRow .uploadInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
+.subscribeButtonContainer,
+.editVideoButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.subscribeButtonContainer .subscribe,
+. {
+  background-color: #f00;
+  color:#fff;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  padding: 8px;
+  outline: none;
+}
+.editVideoButtonContainer .edit {
+  background-color: rgb(66, 145, 235);
+  color:#fff;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  padding: 8px;
+  outline: none;
+}
+.subscribeButtonContainer .unsubscribe {
+  background-color: #eee;
+  color:rgba(17, 17, 17, 0.6);
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+.descriptionContainer {
+  margin-left: 64px;
+  margin-top: 10px;
+  padding-bottom: 20px;
 
-
+}
+.secondaryInfo{
+  padding-top: 15px;
+  border-top:1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+}
