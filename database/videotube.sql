@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2020 at 05:22 PM
+-- Generation Time: Jun 13, 2020 at 02:18 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -94,6 +94,13 @@ CREATE TABLE `likes` (
   `videoId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `likes`
+--
+
+INSERT INTO `likes` (`id`, `username`, `commentId`, `videoId`) VALUES
+(118, 'manohar', 0, 84);
+
 -- --------------------------------------------------------
 
 --
@@ -132,7 +139,10 @@ INSERT INTO `thumbnails` (`id`, `videoid`, `filepath`, `selected`) VALUES
 (66, 83, 'uploads/videos/thumbnails/83-5edf07d26f254.jpg', 0),
 (67, 84, 'uploads/videos/thumbnails/84-5edf084021c3d.jpg', 1),
 (68, 84, 'uploads/videos/thumbnails/84-5edf0840793b8.jpg', 0),
-(69, 84, 'uploads/videos/thumbnails/84-5edf0840ef80a.jpg', 0);
+(69, 84, 'uploads/videos/thumbnails/84-5edf0840ef80a.jpg', 0),
+(70, 85, 'uploads/videos/thumbnails/85-5ee41ad23ed26.jpg', 1),
+(71, 85, 'uploads/videos/thumbnails/85-5ee41ad3d3a10.jpg', 0),
+(72, 85, 'uploads/videos/thumbnails/85-5ee41ad46b8d0.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -156,7 +166,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstName`, `lastName`, `username`, `email`, `password`, `singUpDate`, `profilePic`) VALUES
-(11, 'Manohar', 'Ys', 'manohar', 'manohar@gmail.com', '543eef871c3567d807be0608cc14de4b4b8e83655feac9e57c43b40d6ef50f9ff05f416b6de40a602a4931e3a35df3475ba79f658f05534d099d1f813fd5e99f', '2020-06-08 08:36:58', 'assets/images/profilePictures/default.png');
+(11, 'Manohar', 'Ys', 'manohar', 'manohar@gmail.com', '543eef871c3567d807be0608cc14de4b4b8e83655feac9e57c43b40d6ef50f9ff05f416b6de40a602a4931e3a35df3475ba79f658f05534d099d1f813fd5e99f', '2020-06-08 08:36:58', 'assets/images/profilePictures/default.png'),
+(12, 'Manu', 'Ys', 'manu', 'manu@gmail.com', '543eef871c3567d807be0608cc14de4b4b8e83655feac9e57c43b40d6ef50f9ff05f416b6de40a602a4931e3a35df3475ba79f658f05534d099d1f813fd5e99f', '2020-06-13 05:44:55', 'assets/images/profilePictures/default.png');
 
 -- --------------------------------------------------------
 
@@ -183,7 +194,8 @@ CREATE TABLE `videos` (
 
 INSERT INTO `videos` (`id`, `uploadedBy`, `title`, `description`, `category`, `privacy`, `filePath`, `uploadDate`, `views`, `duration`) VALUES
 (83, 'manohar', 'asdf', 'asdf', 0, 16, 'uploads/videos/5edf07d1687b5demo.flv', '2020-06-09 09:23:53', 2, '00:16'),
-(84, 'manohar', 'sadf', 'sd', 0, 16, 'uploads/videos/5edf083fe38b3videoplayback.mp4', '2020-06-09 09:25:43', 62, '00:16');
+(84, 'manohar', 'sadf', 'sd', 0, 16, 'uploads/videos/5edf083fe38b3videoplayback.mp4', '2020-06-09 09:25:43', 214, '00:16'),
+(85, 'manu', 'some random video', 'some random video', 1, 25, 'uploads/videos/5ee41ad0272c1videoplayback.mp4', '2020-06-13 05:46:16', 0, '00:16');
 
 --
 -- Indexes for dumped tables
@@ -239,31 +251,31 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `dislikes`
 --
 ALTER TABLE `dislikes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 
 --
 -- AUTO_INCREMENT for table `thumbnails`
 --
 ALTER TABLE `thumbnails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

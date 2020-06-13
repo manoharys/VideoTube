@@ -52,7 +52,7 @@
         $pw = hash("sha512",$pw);
         $profilePic = "assets/images/profilePictures/default.png";
 
-        $query = $this->conn->prepare("INSERT INTO users (firstname, lastname, username, email, password, profile)
+        $query = $this->conn->prepare("INSERT INTO users (firstname, lastname, username, email, password, profilePic)
                                       VALUES (:fn, :ln, :un, :em, :pw, :profilePic)");
         $query->bindParam(":fn",$fn);
         $query->bindParam(":ln",$ln);
@@ -90,7 +90,7 @@
          2) Checking whether the username already exits or not
       */
       private function validateusername($un){
-        if(strlen($un) > 25 || strlen($un) < 5){
+        if(strlen($un) > 25 || strlen($un) < 4){
             array_push($this->errorArray,Constants::$usernameCharacter);        
         }
 

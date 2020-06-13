@@ -43,7 +43,8 @@
             $this->actionButton = ButtonProvider::createEditButton($this->video->getVideoId());
        } 
        else{
-           $this->actionButton= "";
+           $userTo = new User($this->conn, $uploadedBy);
+           $this->actionButton= ButtonProvider::createSubscriberButton($this->conn, $userTo, $this->userLoggedInObj);
        }
 
        return "<div class='secondaryInfo'>
