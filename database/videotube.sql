@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2020 at 02:18 AM
+-- Generation Time: Jun 14, 2020 at 07:00 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -99,7 +99,8 @@ CREATE TABLE `likes` (
 --
 
 INSERT INTO `likes` (`id`, `username`, `commentId`, `videoId`) VALUES
-(118, 'manohar', 0, 84);
+(118, 'manohar', 0, 84),
+(122, 'manohar', 0, 85);
 
 -- --------------------------------------------------------
 
@@ -193,9 +194,9 @@ CREATE TABLE `videos` (
 --
 
 INSERT INTO `videos` (`id`, `uploadedBy`, `title`, `description`, `category`, `privacy`, `filePath`, `uploadDate`, `views`, `duration`) VALUES
-(83, 'manohar', 'asdf', 'asdf', 0, 16, 'uploads/videos/5edf07d1687b5demo.flv', '2020-06-09 09:23:53', 2, '00:16'),
-(84, 'manohar', 'sadf', 'sd', 0, 16, 'uploads/videos/5edf083fe38b3videoplayback.mp4', '2020-06-09 09:25:43', 214, '00:16'),
-(85, 'manu', 'some random video', 'some random video', 1, 25, 'uploads/videos/5ee41ad0272c1videoplayback.mp4', '2020-06-13 05:46:16', 0, '00:16');
+(83, 'manohar', 'asdf', 'asdf', 0, 16, 'uploads/videos/5edf07d1687b5demo.flv', '2020-06-09 09:23:53', 3, '00:16'),
+(84, 'manohar', 'sadf', 'sd', 0, 16, 'uploads/videos/5edf083fe38b3videoplayback.mp4', '2020-06-09 09:25:43', 243, '00:16'),
+(85, 'manu', 'some random video', 'some random video', 1, 25, 'uploads/videos/5ee41ad0272c1videoplayback.mp4', '2020-06-13 05:46:16', 42, '00:16');
 
 --
 -- Indexes for dumped tables
@@ -251,13 +252,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `dislikes`
 --
 ALTER TABLE `dislikes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 
 --
 -- AUTO_INCREMENT for table `thumbnails`

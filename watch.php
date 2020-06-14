@@ -3,6 +3,7 @@
    require_once("includes/classes/Video.php");
    require_once("includes/classes/VideoPlayer.php");
    require_once("includes/classes/VideoInfo.php");
+   require_once("includes/classes/CommentSection.php");
 
 
     if(!isset($_GET["id"])){
@@ -25,7 +26,10 @@
 
             $videoInfo = new VideoInfo($conn, $video, $userLoggedInObj);
             echo $videoInfo->create();
-       ?>
+            
+            $commentSection = new CommentSection($conn, $video, $userLoggedInObj);
+            echo $commentSection->create();
+      ?>
    </div>
 
    <div class="suggestion">
