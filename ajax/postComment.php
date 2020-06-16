@@ -1,6 +1,8 @@
 <?php 
    
    include("../includes/config.php");
+   include("../includes/classes/Comment.php");
+   include("../includes/classes/User.php");
 
    if(isset($_POST["commentText"]) && isset($_POST["postedBy"]) && isset($_POST["videoId"])){
        //inserting into database
@@ -17,6 +19,10 @@
        $commentText = $_POST["commentText"];
 
        $query->execute();
+
+       $userLoggedInObj = new User($conn, $_SESSION["userLoggedIn"]);
+       $newComment = new Comment($conn, $conn->lastInsertId(), $userLoggedInObj, $videoId);
+       echo $newComment->create();
     }
    else{
        echo "one or more parameter is not passed to subscribe.php";
