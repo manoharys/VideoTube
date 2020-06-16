@@ -25,7 +25,25 @@
        $commentAction = "";
 
        $commentButton = ButtonProvider::createButton("COMMENT", null, $commentAction, "postComment");
-   
+      
+       //Get comments html
+       return "
+              <div class = 'commentSection'>
+                  <div class = 'header'>
+                      <span class='commentCount'>$numOfComments comments</div>
+                      <div class = 'commentForm'>
+                          $profileButton
+                          <textarea class = 'commentBodyClass' placeholder = 'add a public comment'></textarea>
+                          $commentButton
+                      </div>
+                  </div>
+
+                  <div class = 'comments'>
+                  
+                  </div>
+
+              </div>
+            ";
      }
 
   
