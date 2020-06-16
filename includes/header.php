@@ -36,6 +36,8 @@
       <script src="./assets/JS/commonAction.js"></script>
       <script src = "./assets/JS/videoPlayerAction.js"></script>
       <script src = "./assets/JS/userAction.js"></script>
+      <script src = "./assets/JS/commentAction.js"></script>
+
 
 
 </head>
