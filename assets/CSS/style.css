@@ -359,3 +359,48 @@ form {
   font-size: 18px;
   font-weight: 600;
 }
+
+/* comment section */
+
+.commentSection .header {
+  display:flex;
+  flex-direction:column;
+  margin-top:30px;
+}
+.commentSection .header .commentCount{
+  margin-bottom:20px;
+}
+.commentSection .header .commentForm{
+  display:flex;
+}
+
+.commentSection .header .commentForm .profilePicture{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  margin-right:15px;
+}
+
+.commentSection .header .commentForm .commentBodyClass{
+  flex:1;
+  margin-right:15px;
+  resize:none;
+  border:1px solid #dedede;
+  font-size:13px;
+  padding:10px 0px 0px 10px;
+
+}
+
+.commentSection .header .commentForm .postComment{
+  font-size:14px;
+  border:none;
+  border-radius:3px;
+  background-color:#065fd4;
+  color:#ffffffc2;
+  padding:0px 10px;
+}
+
+.commentSection .header .commentForm .postComment:hover{
+    background-color:#0e468f;
+  color:#ffffff;
+}

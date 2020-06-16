@@ -30,7 +30,7 @@
        return "
               <div class = 'commentSection'>
                   <div class = 'header'>
-                      <span class='commentCount'>$numOfComments comments</div>
+                      <span class='commentCount'>$numOfComments comments</span>
                       <div class = 'commentForm'>
                           $profileButton
                           <textarea class = 'commentBodyClass' placeholder = 'add a public comment'></textarea>
