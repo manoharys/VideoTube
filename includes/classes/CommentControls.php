@@ -52,7 +52,7 @@
         $class = "likeButton";
         $imageSrc = "assets/images/icons/thumb-up.png";
 
-        if($this->video->wasLiked()){
+        if($this->comment->wasLiked()){
         $imageSrc = "assets/images/icons/thumb-up-active.png";
         }
         return ButtonProvider::createButton("", $imageSrc, $action, $class);
@@ -64,7 +64,7 @@
         $action = "disLikeVideo($commentId, this, $videoId)";
         $class = "disLikeButton";
         $imageSrc = "assets/images/icons/thumb-down.png";
-        if($this->video->wasDisLiked()){
+        if($this->comment->wasDisLiked()){
           $imageSrc = "assets/images/icons/thumb-down-active.png";
           }
         return ButtonProvider::createButton("", $imageSrc, $action, $class);

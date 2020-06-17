@@ -1,5 +1,7 @@
 <?php 
    require_once("ButtonProvider.php");
+   require_once("CommentControls.php");
+   
    class Comment{
        private $conn, $sqlData, $userLoggedInObj, $videoId;
 
@@ -24,7 +26,8 @@
            $postedBy = $this->sqlData["postedBy"];
            $profileButton = ButtonProvider::createProfileButton($this->conn, $postedBy);
            $timespan = ""; //TODO : get timespan
-
+           $commentControlsObj = new CommentControls($this->conn, $this, $this->userLoggedInObj);
+           $commentControls = $commentControlsObj->create();
            return "
                  <div class = 'itemContainer'>
                     <div class = 'comment'>
@@ -42,10 +45,44 @@
                             </div>
                         </div>
                     </div>
+                    $commentControls
                  </div>
               
               ";
        }
+       public function getId(){
+           return $this->sqlData["id"];
+       }
+
+       public function getVideoId(){
+           return $this->videoId;
+       }
+       
+       public function wasLiked(){
+        $id = $this->getId();
+        $username = $this->userLoggedInObj->getUsername();
+        
+        $query = $this->conn->prepare("SELECT * FROM likes WHERE username=:username AND commentId  =:commentId");
+        $query->bindParam(':username', $username);
+        $query->bindParam(':commentId', $id);
+    
+        $query->execute();
+        
+        return $query->rowCount() > 0;
+     }
+
+        public function wasDisLiked() {
+            $id = $this->getVideoId();
+            $username = $this->userLoggedInObj->getUsername();
+            
+            $query = $this->conn->prepare("SELECT * FROM dislikes WHERE username=:username AND commentId=:commentId");
+            $query->bindParam(':username', $username);
+            $query->bindParam(':commentId', $id);
+
+            $query->execute();
+            
+            return $query->rowCount() > 0;
+        }
 
        public function getLikes(){
            $query = $this->conn->prepare("SELECT count(*) as 'count' FROM likes WHERE commentId = :commentId");

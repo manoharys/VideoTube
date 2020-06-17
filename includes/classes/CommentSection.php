@@ -25,6 +25,8 @@
        $commentAction = "postComment(this, \"$postedBy\", $videoId,  null, \"comments\")";
 
        $commentButton = ButtonProvider::createButton("COMMENT", null, $commentAction, "postComment");
+
+       
       
        //Get comments html
        return "
@@ -39,7 +41,7 @@
                   </div>
 
                   <div class = 'comments'>
-                       
+                    
                   </div>
 
               </div>
