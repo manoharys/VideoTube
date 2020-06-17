@@ -211,7 +211,7 @@ class Video {
    public function getNumOfComments(){
         $videoId = $this->getVideoId();
         
-        $query = $this->conn->prepare("SELECT * FROM comments WHERE id = :videoId");
+        $query = $this->conn->prepare("SELECT * FROM comments WHERE videoId = :videoId");
         $query->bindParam(':videoId', $videoId);   
         
         $query->execute();

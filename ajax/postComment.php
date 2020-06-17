@@ -5,6 +5,8 @@
    include("../includes/classes/User.php");
 
    if(isset($_POST["commentText"]) && isset($_POST["postedBy"]) && isset($_POST["videoId"])){
+       $userLoggedInObj = new User($conn, $_SESSION["userLoggedIn"]);
+       
        //inserting into database
        $query = $conn->prepare("INSERT INTO comments(postedBy, videoId, responseTo, body)
                                         VALUES(:postedBy, :videoId, :responseTo, :body)");
@@ -15,12 +17,11 @@
        
        $postedBy = $_POST["postedBy"];
        $videoId = $_POST["videoId"];
-       $reponseTo = $_POST["responseTo"];
+       $reponseTo = ($_POST["responseTo"] == null) ? "0" : $post["responseTo"];
        $commentText = $_POST["commentText"];
 
        $query->execute();
 
-       $userLoggedInObj = new User($conn, $_SESSION["userLoggedIn"]);
        $newComment = new Comment($conn, $conn->lastInsertId(), $userLoggedInObj, $videoId);
        echo $newComment->create();
     }

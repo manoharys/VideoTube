@@ -22,7 +22,7 @@
        $videoId = $this->video->getVideoId();
        
        $profileButton = ButtonProvider::createProfileButton($this->conn, $postedBy);
-       $commentAction = "postComment(this, \"$postedBy\", $videoId, null, \"comments\")";
+       $commentAction = "postComment(this, \"$postedBy\", $videoId,  null, \"comments\")";
 
        $commentButton = ButtonProvider::createButton("COMMENT", null, $commentAction, "postComment");
       
@@ -39,7 +39,7 @@
                   </div>
 
                   <div class = 'comments'>
-                  
+                       
                   </div>
 
               </div>
