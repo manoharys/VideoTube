@@ -46,6 +46,26 @@
               
               ";
        }
+
+       public function getLikes(){
+           $query = $this->conn->prepare("SELECT count(*) as 'count' FROM likes WHERE commentId = :commentId");
+           $query->bindParam(":commentId", $commentId);
+           $commentId = $this->getId();
+           $query->execute();
+
+           $data = $query->fetch(PDO::FETCH_ASSOC);
+           $numLikes = $data["count"];
+
+           $query = $this->conn->prepare("SELECT count(*) as 'count' FROM disLikes WHERE commentId = :commentId");
+           $query->bindParam(":commentId", $commentId);
+           $query->execute();
+
+           $data = $query->fetch(PDO::FETCH_ASSOC);
+           $numDisLikes = $data["count"];
+
+           return $numLikes - $numDisLikes;
+           
+       }
    }
 
 ?>

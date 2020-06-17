@@ -46,28 +46,28 @@
 
     private function createLikeButton(){
 
-        $text = $this->video->getVideoLikes();
-        $videoId = $this->video->getVideoId();
-        $action = "likeVideo(this, $videoId)";
+        $commentId = $this->comment->getId();
+        $videoId = $this->comment->getVideoId();
+        $action = "likeVideo($commentId, this, $videoId)";
         $class = "likeButton";
         $imageSrc = "assets/images/icons/thumb-up.png";
 
         if($this->video->wasLiked()){
         $imageSrc = "assets/images/icons/thumb-up-active.png";
         }
-        return ButtonProvider::createButton($text, $imageSrc, $action, $class);
+        return ButtonProvider::createButton("", $imageSrc, $action, $class);
     }
     
     private function createDisLikeButton(){
-        $text = $this->video->getVideoDisLikes();
-        $videoId = $this->video->getVideoId();
-        $action = "disLikeVideo(this, $videoId)";
+        $commentId = $this->comment->getId();
+        $videoId = $this->comment->getVideoId();
+        $action = "disLikeVideo($commentId, this, $videoId)";
         $class = "disLikeButton";
         $imageSrc = "assets/images/icons/thumb-down.png";
         if($this->video->wasDisLiked()){
           $imageSrc = "assets/images/icons/thumb-down-active.png";
           }
-        return ButtonProvider::createButton($text, $imageSrc, $action, $class);
+        return ButtonProvider::createButton("", $imageSrc, $action, $class);
     }
   }
 
