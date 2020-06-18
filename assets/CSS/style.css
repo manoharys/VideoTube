@@ -474,3 +474,7 @@ form {
   font-weight: 400;
   line-height: 18px;
 }
+
+.hidden {
+  display:none !important;
+}
