@@ -67,7 +67,7 @@
 
         $commentId = $this->comment->getId();
         $videoId = $this->comment->getVideoId();
-        $action = "likeVideo($commentId, this, $videoId)";
+        $action = "likeComment($commentId, this, $videoId)";
         $class = "likeButton";
         $imageSrc = "assets/images/icons/thumb-up.png";
 
@@ -80,7 +80,7 @@
     private function createDisLikeButton(){
         $commentId = $this->comment->getId();
         $videoId = $this->comment->getVideoId();
-        $action = "disLikeVideo($commentId, this, $videoId)";
+        $action = "disLikeComment($commentId, this, $videoId)";
         $class = "disLikeButton";
         $imageSrc = "assets/images/icons/thumb-down.png";
         if($this->comment->wasDisLiked()){
