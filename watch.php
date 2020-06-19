@@ -33,7 +33,7 @@
             echo $commentSection->create();
       ?>
    </div>
-   </div>
+ 
 
    <div class="suggestion">
       suggestions

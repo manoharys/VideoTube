@@ -36,7 +36,7 @@
 
            if($numResponses > 0) {
                $viewRepliesText = "<span class='repliesSection viewReplies' onclick='getReplies($id, this, $videoId)'>
-                                    View all $numResponses replies</span
+                                    View all $numResponses replies</span>
                                     ";
            }
            else {
