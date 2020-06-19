@@ -83,3 +83,13 @@ function updateLikeValue(element, num){
     let likesCountVal = element.text() || 0;
     element.text(parseInt(likesCountVal) + parseInt(num));
 }
+
+function getReplies(commentId, button, videoId) {
+    $.post("ajax/getCommentReplies.php", { commentId: commentId, videoId: videoId })
+    .done(function(comments) {
+        var replies = $("<div>").addClass("repliesSection");
+        replies.append(comments);
+
+        $(button).replaceWith(replies);
+    });
+}
