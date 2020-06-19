@@ -104,7 +104,7 @@
         return $string ? implode(', ', $string) . ' ago' : 'just now';
     }
 
-       public function getId(){
+       public function getId(){          
            return $this->sqlData["id"];
        }
 
@@ -162,7 +162,7 @@
         $commentId = $this->getId();
         $username = $this->userLoggedInObj->getUsername();
         if($this->wasLiked()){
-            $query = $this->conn->prepare( "DELETE FROM likes WHERE username = :username AND commentId = :commentId");
+            $query = $this->conn->prepare("DELETE FROM likes WHERE username = :username AND commentId = :commentId");
             $query->bindParam(":username", $username);
             $query->bindParam(":commentId", $commentId);
 
@@ -172,14 +172,14 @@
         }
         else{
             $commentId = $this->getId();
-            $query = $this->conn->prepare("DELETE FROM DisLikes WHERE username = :username AND commentId = :commentId");
+            $query = $this->conn->prepare("DELETE FROM dislikes WHERE username = :username AND commentId = :commentId");
             $query->bindParam(":username", $username);
             $query->bindParam(":commentId", $commentId);
 
             $query->execute();
             $count = $query->rowCount();
-
-            $query = $this->conn->prepare("INSERT INTO likes(username,videoId) VALUES(:username, :commentId)");
+           // echo $count;
+            $query = $this->conn->prepare("INSERT INTO likes(username,commentId) VALUES(:username, :commentId)");
             $query->bindParam(":username", $username);
             $query->bindParam(":commentId", $commentId);
             
@@ -215,7 +215,7 @@
             
             $query->execute();
 
-            return -1-$count;
+            return -1 - $count;
         }
      }
 
