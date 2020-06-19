@@ -17,7 +17,8 @@
        
        $postedBy = $_POST["postedBy"];
        $videoId = $_POST["videoId"];
-       $reponseTo = ($_POST["responseTo"] == null) ? "0" : $post["responseTo"];
+       $responseTo = isset($_POST['responseTo']) ? $_POST['responseTo'] : 0;
+       
        $commentText = $_POST["commentText"];
 
        $query->execute();
