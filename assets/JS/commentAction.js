@@ -38,8 +38,7 @@ function likeComment(commentId, button, videoId){
        disLikeButton.removeClass("active");
        
        let likesCount = $(button).siblings(".likesCount");
-         console.log(likesCount);
-         console.log(numToChange);
+   
          updateLikeValue(likesCount, numToChange);
        
        if(numToChange < 0){
@@ -53,32 +52,30 @@ function likeComment(commentId, button, videoId){
     });
 }
 
-// function disLikeComment(commentId, button, videoId){
-//     $.post("ajax/disLikeComment.php",{commentId:commentId, videoId:videoId})
-//     .done(function(data){
-       
-//        let disLikeButton = $(button);
-//        let likeButton = $(button).siblings(".likeButton");
+function disLikeComment(commentId, button, videoId){
+    $.post("ajax/disLikeComment.php",{ commentId: commentId ,videoId:videoId})
+    .done(function(numToChange){
+    
+    let disLikeButton = $(button);
+    let likeButton = $(button).siblings(".likeButton");
 
-//        disLikeButton.addClass("active");
-//        likeButton.removeClass("active");
-       
-//        let result = JSON.parse(data);
-//         console.log(result);
-       
-//        updateLikeValue(likeButton.find(".text"), result.likes)
-//        updateLikeValue(disLikeButton.find(".text"), result.disLikes)
-       
-//        if(result.disLikes < 0){
-//            disLikeButton.removeClass("active");
-//            disLikeButton.find("img:first").attr("src","assets/images/icons/thumb-down.png");
-//        }else{
-//            disLikeButton.find("img:first").attr("src","assets/images/icons/thumb-down-active.png");
-//        }
-//        likeButton.find("img:first").attr("src","assets/images/icons/thumb-up.png");
+    disLikeButton.addClass("active");
+    likeButton.removeClass("active");
+    
+    let likesCount = $(button).siblings(".likesCount");
 
-//     });
-// }
+      updateLikeValue(likesCount, numToChange);
+    
+    if(numToChange > 0){
+        disLikeButton.removeClass("active");
+        disLikeButton.find("img:first").attr("src","assets/images/icons/thumb-down.png");
+    }else{
+        disLikeButton.find("img:first").attr("src","assets/images/icons/thumb-down-active.png");
+    }
+        likeButton.find("img:first").attr("src","assets/images/icons/thumb-up.png");
+
+ });
+}
 
 
 

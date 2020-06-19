@@ -209,7 +209,7 @@
             $query->execute();
             $count = $query->rowCount();
 
-            $query = $this->conn->prepare("INSERT INTO dislikes(username,videoId) VALUES(:username, :commentId)");
+            $query = $this->conn->prepare("INSERT INTO dislikes(username,commentId) VALUES(:username, :commentId)");
             $query->bindParam(":username", $username);
             $query->bindParam(":commentId", $commentId);
             
