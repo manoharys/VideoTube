@@ -26,9 +26,12 @@
 
        $commentButton = ButtonProvider::createButton("COMMENT", null, $commentAction, "postComment");
 
-       
+        $comments = $this->video->getComments();
+        $commentItems = "";
+        foreach($comments as $comment) {
+            $commentItems .= $comment->create();
+        } 
       
-       //Get comments html
        return "
               <div class = 'commentSection'>
                   <div class = 'header'>
@@ -41,7 +44,7 @@
                   </div>
 
                   <div class = 'comments'>
-                    
+                     $commentItems 
                   </div>
 
               </div>
