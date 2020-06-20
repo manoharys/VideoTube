@@ -491,3 +491,46 @@ form {
   font-size: 14px;
   font-weight: 500;
 }
+
+
+.videoGrid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.suggestions .videoGridItem {
+  display: flex;
+  height: auto;
+}
+
+.videoGridItem {
+  margin-right: 4px;
+  margin-bottom: 24px;
+}
+
+.videoGridItem .thumbnail {
+  width: 210px;
+  height: 118px;
+  position: relative;
+}
+
+.videoGridItem .thumbnail img {
+  width: 100%;
+  height: 100%;
+}
+
+.videoGridItem .thumbnail .duration {
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  margin: 4px;
+  color: #fff;
+  background-color: rgba(17,17,17,0.8);
+  opacity: 0.8;
+  padding: 2px 4px;
+  border-radius: 2px;
+  letter-spacing: 0.5px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 12px;
+}
