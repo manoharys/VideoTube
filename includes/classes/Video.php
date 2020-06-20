@@ -68,6 +68,15 @@ class Video {
         return $this->sqlData["duration"];
     }
 
+    public function getVideoThumbnail() {
+          $query = $this->conn->prepare("SELECT filePath FROM thumbnails WHERE videoId = :videoId AND selected=1");
+          $query->bindParam(":videoId", $videoId);
+          $videoId = $this->getVideoId();
+          $query->execute();
+
+          return $query->fetchColumn();
+    }
+
     public function increamentViews(){
          $videoId = $this->getVideoId();
 

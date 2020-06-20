@@ -22,7 +22,16 @@
         }
 
         private function createThumbnail() {
-            return "testdsdf";
+            $thumbnail = $this->video->getVideoThumbnail();
+            $duration = $this->video->getVideoDuration();
+
+            return "<div class='thumbnail'>
+                        <img src='$thumbnail'>
+                        <div class='duration'>
+                           <span> $duration </span>
+                        </div>
+                    </div>
+            ";
         }
 
         private function createDetails() {
