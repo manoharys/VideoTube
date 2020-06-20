@@ -35,7 +35,7 @@
    </div>
  
 
-   <div class="suggestion">
+   <div class="suggestions">
       <?php
         $videoGrid = new VideoGrid($conn, $userLoggedInObj);
         echo $videoGrid->create(null, null, false);
