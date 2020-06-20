@@ -35,7 +35,25 @@
         }
 
         private function createDetails() {
-            return "";  
+           $title = $this->video->getVideoTitle();
+           $username = $this->video->getVideoUploadedBy(); 
+           $views = $this->video->getVideoViews(); 
+           $description = $this->video->getVideoDescription(); 
+           $timeStamp = $this->video->getVideoTimeStamp(); 
+
+           return "
+                  <div class='details'>
+                     <h3 class='title'>$title</h3>
+                     <span class='username'>$username</span>
+                     <div class='stats'>
+                        <span class = 'viewCount'>$views - </span>
+                        <span class = 'timeStamp'>$timeStamp</span>
+                     </div>
+                     $description
+                  </div>
+           
+           ";
+
         }
     }
 ?>
