@@ -8,7 +8,25 @@
         }
 
         public function create() {
-            return ""; 
+           $thumbnail = $this->createThumbnail();
+           $details = $this->createDetails();
+           $url = "watch.php?id=" . $this->video->getVideoId();
+
+           return "<a href='$url'>
+                       <div class = 'videoGridItem'>
+                             $thumbnail
+                             $details
+                       </div>
+                   </a>
+           ";
+        }
+
+        private function createThumbnail() {
+            return "testdsdf";
+        }
+
+        private function createDetails() {
+            return "";  
         }
     }
 ?>

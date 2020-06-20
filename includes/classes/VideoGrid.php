@@ -6,13 +6,13 @@
     private $gridClass = "videoGrid";
 
     public function __construct($conn, $userLoggedInObj) {
-        $this->$conn;
-        $this->userLoggedInObj;
+        $this->conn = $conn;
+        $this->userLoggedInObj = $userLoggedInObj;
     }
 
     public function create($videos, $title, $showFilter) {
          
-        if($video == null) {
+        if($videos == null) {
             $gridItem = $this->generateItems();
         }
         else{
@@ -27,12 +27,12 @@
 
         return "$header
                 <div class = '$this->gridClass'>
-
+                     $gridItem
                 </div>";
     }
 
       public function generateItems() {
-        $query = $this->con->prepare("SELECT * FROM videos ORDER BY RAND() LIMIT 15");
+        $query = $this->conn->prepare("SELECT * FROM videos ORDER BY RAND() LIMIT 15");
         $query->execute();
 
         $elementHtml = "";
@@ -46,11 +46,11 @@
       }
 
       public function generateItemsFromVideos($videos) {
-
+        return "";
       }
       
       public function createGirdHeader($title, $showFilter) {
-
+        return "";
       }
 
 
