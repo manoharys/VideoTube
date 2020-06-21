@@ -6,6 +6,7 @@
 ### Table of Contents
 
 - [Description](#description)
+- [Preview](#preview)
 - [How To Use](#how-to-use)
 - [Requirements](#requirements)
 - [License](#license)
@@ -37,6 +38,14 @@ VideoTube is a video uploading site containing standard features of YouTube that
 [Back To The Top](#videotube)
 
 ---
+
+## Preview
+
+#### Screenshots
+<img src='https://github.com/manoharys/VideoTube/blob/master/screenshot/signUp.JPG'>
+<img src='https://github.com/manoharys/VideoTube/blob/master/screenshot/signIn.JPG'>
+
+
 
 ## How To Use
 
