@@ -4,6 +4,7 @@
   require_once("includes/classes/VideoGrid.php");
   require_once("includes/classes/VideoGridItem.php");
   require_once("includes/classes/Video.php");
+  require_once("includes/classes/SubscriptionProvider.php");
 
 
   $usernameLoggedIn = isset($_SESSION["userLoggedIn"]) ? $_SESSION["userLoggedIn"] : "";
