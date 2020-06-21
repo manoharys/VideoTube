@@ -22,7 +22,7 @@
         $header = "";
 
         if($title != null){
-            $header = $this->createGirdHeader($title, $showFilter);
+            $header = $this->createGridHeader($title, $showFilter);
         }
 
         return "$header
@@ -49,10 +49,18 @@
         return "";
       }
       
-      public function createGirdHeader($title, $showFilter) {
-        return "";
-      }
+      public function createGridHeader($title, $showFilter) {
+        $filter = "";
 
+        // create filter
+
+        return "<div class='videoGridHeader'>
+                        <div class='left'>
+                            $title
+                        </div>
+                        $filter
+                    </div>";
+    }
 
    }
 ?>

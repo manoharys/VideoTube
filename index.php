@@ -1,16 +1,12 @@
 <?php require_once('includes/header.php');?>
 
- <?php 
-            if(isset($_SESSION["userLoggedIn"])) {
-                $img = $userLoggedInObj->getUserProfilePic();
-                echo "user is logged in as " . $userLoggedInObj->getName(). " and your email " .$userLoggedInObj->getUserEmail();
-                echo "<img src = $img >";
+<div class="videoSection">
+    <?php
+    $videoGrid = new VideoGrid($conn, $userLoggedInObj->getUsername());
+    echo $videoGrid->create(null, "Recommended", false);
 
-            }
-            else {
-                echo "not logged in";
-            }
- ?>
 
+    ?>
+</div>
 <?php require_once('includes/footer.php') ?>
  
