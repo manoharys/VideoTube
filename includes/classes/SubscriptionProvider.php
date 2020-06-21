@@ -3,7 +3,7 @@ class SubscriptionsProvider {
 
     private $conn, $userLoggedInObj;
 
-    public function __connstruct($conn, $userLoggedInObj) {
+    public function __construct($conn, $userLoggedInObj) {
         $this->conn = $conn;
         $this->userLoggedInObj = $userLoggedInObj;
     }
@@ -35,19 +35,20 @@ class SubscriptionsProvider {
             }
 
             $videoSql = "SELECT * FROM videos $condition ORDER BY uploadDate DESC";
-            $videoQuery = $this->con->prepare($videoSql);
+            $videoQuery = $this->conn->prepare($videoSql);
 
             $i = 1;
 
             foreach($subscriptions as $sub) {
-                $videoQuery->bindParam($i, $subUsername);
                 $subUsername = $sub->getUsername();
+                
+                $videoQuery->bindParam($i, $subUsername);
                 $i++;
             }
 
             $videoQuery->execute();
             while($row = $videoQuery->fetch(PDO::FETCH_ASSOC)) {
-                $video = new Video($this->con, $row, $this->userLoggedInObj);
+                $video = new Video($this->conn, $row, $this->userLoggedInObj);
                 array_push($videos, $video);
             }
 

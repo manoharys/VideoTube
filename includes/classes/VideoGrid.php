@@ -46,7 +46,14 @@
       }
 
       public function generateItemsFromVideos($videos) {
-        return "";
+        $elementsHtml = "";
+
+        foreach($videos as $video) {
+            $item = new VideoGridItem($video, $this->largeMode);
+            $elementsHtml .= $item->create();
+        }
+
+        return $elementsHtml;
       }
       
       public function createGridHeader($title, $showFilter) {
