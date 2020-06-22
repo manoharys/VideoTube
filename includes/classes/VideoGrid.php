@@ -68,6 +68,11 @@
                         $filter
                     </div>";
     }
-
+    
+    public function createLarge($videos, $title, $showFilter) {
+        $this->gridClass .= " large";
+        $this->largeMode = true;
+        return $this->create($videos, $title, $showFilter);
+    }
    }
 ?>
