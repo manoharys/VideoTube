@@ -1,6 +1,7 @@
 <?php 
   require_once("includes/config.php");
   require_once("includes/classes/ButtonProvider.php"); 
+  require_once("includes/classes/NavigationMenuProvider.php");
   require_once("includes/classes/User.php");
   require_once("includes/classes/VideoGrid.php");
   require_once("includes/classes/VideoGridItem.php");
@@ -85,7 +86,10 @@
 
         <!-- side navigation bar -->
         <div id="sideNavContainer" style="display:none;">
-
+        <?php        
+           $navigationProvider = new NavigationMenuProvider($conn, $userLoggedInObj);
+           echo  $navigationProvider->create();              
+        ?>
         </div>
 
 
