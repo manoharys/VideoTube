@@ -546,6 +546,7 @@ form {
   display: flex;
   flex-direction: column;
   width: 210px;
+  
 }
 
 .suggestions .videoGridItem .details {
@@ -602,6 +603,7 @@ form {
 
 .videoGrid.large .videoGridItem .details {
   max-width: 600px;
+  flex:1;
 }
 
 .videoGrid.large .videoGridItem .details .title {
