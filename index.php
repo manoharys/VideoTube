@@ -1,8 +1,10 @@
-<?php require_once('includes/header.php');?>
+<?php require_once('includes/header.php');
+
+?>
 
 <div class="videoSection">
     <?php
-      $subscriptionsProvider = new SubscriptionsProvider($conn, $userLoggedInObj);
+    $subscriptionsProvider = new SubscriptionsProvider($conn, $userLoggedInObj);
     $subscriptionVideos = $subscriptionsProvider->getVideos();
 
     $videoGrid = new VideoGrid($conn, $userLoggedInObj->getUsername());
@@ -16,5 +18,5 @@
 
     ?>
 </div>
-<?php require_once('includes/footer.php') ?>
+<?php require_once('includes/footer.php');     ?>
  

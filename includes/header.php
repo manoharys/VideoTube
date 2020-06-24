@@ -1,12 +1,13 @@
 <?php 
   require_once("includes/config.php");
+  require_once("includes/classes/ButtonProvider.php"); 
   require_once("includes/classes/User.php");
   require_once("includes/classes/VideoGrid.php");
   require_once("includes/classes/VideoGridItem.php");
   require_once("includes/classes/Video.php");
   require_once("includes/classes/SubscriptionProvider.php");
 
-
+  
   $usernameLoggedIn = isset($_SESSION["userLoggedIn"]) ? $_SESSION["userLoggedIn"] : "";
   $userLoggedInObj = new User($conn, $usernameLoggedIn);
 
@@ -73,10 +74,11 @@
                 <a href="upload.php">
                 <img src="./assets/images/icons/upload.png" alt="upload">
                 </a>
-                
                 <a href="#">
-                <img src="./assets/images/profilePictures/default.png" alt="profile">
+                <img src="./assets/images/profilePictures/default.png" alt="user">
                 </a>
+                
+                <!-- <?php echo ButtonProvider::createUserProfileNavigationButton($conn, $userLoggedInObj->getUsername()); ?> -->
             </div>
         </div>
 

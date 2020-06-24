@@ -72,6 +72,18 @@
                    </div>";
      }
 
+         
+    public static function createUserProfileNavigationButton($conn, $username) {
+      if(User::isLoggedIn()) {
+          return ButtonProvider::createProfileButton($conn, $username);
+      }
+      else {
+          return "<a href='signIn.php'>
+                      <span class='signInLink'>SIGN IN</span>
+                  </a>";
+      }
+  }
+
   }
 
 ?>
