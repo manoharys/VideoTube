@@ -668,3 +668,12 @@ form {
 #sideNavContainer .navigationItem a:hover {
   background-color: rgba(0,0,0, 0.04);
 }
+
+#sideNavContainer .heading {
+  color: rgba(17,17,17,0.6);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 24px 0;
+  border-top: 1px solid #ededed;
+  display: block;
+}
