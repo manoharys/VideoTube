@@ -1,11 +1,15 @@
 <?php
 class ProfileData {
     
-    private $conn, $profileUserObj;
+    private $conn, $profileUserObj, $profileData;
 
     public function __construct($conn, $profileUsername) {
         $this->conn = $conn;
         $this->profileUserObj = new User($conn, $profileUsername);
+    }
+  
+    public function getProfileUserObj() {
+        return $this->profileUserObj;
     }
 
     public function getProfileUsername() {
