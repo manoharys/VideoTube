@@ -42,7 +42,10 @@ class User {
     public function getUserEmail(){
         return $this->sqlData["email"];
     }  
-
+    
+    public function getSignUpDate() {
+        return $this->sqlData["signUpDate"];
+    }
 
     //subscribers methods
 
