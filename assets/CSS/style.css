@@ -728,3 +728,38 @@ form {
   width: 100%;
   letter-spacing: 5px;
 }
+
+
+.profileHeader {
+  padding: 15px 100px 0 100px;
+  display: flex;
+  height: 100px;
+}
+
+.userInfoContainer {
+  flex: 1;
+  display: flex;
+}
+
+.profileHeader .userInfoContainer .profileImage {
+  height: 80px;
+  width: 80px;
+}
+
+.profileHeader .userInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profileHeader .userInfo .title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #111;
+}
+
+.profileHeader .userInfo .subscriberCount {
+  font-size: 14px;
+  color: rgba(17,17,17,0.6);
+}
