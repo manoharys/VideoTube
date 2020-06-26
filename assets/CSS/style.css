@@ -795,3 +795,9 @@ form {
 .nav-item a {
   color: rgba(17,17,17,0.6);
 }
+
+.channelContent .section .values {
+  color: rgba(17,17,17,0.6);
+  display: flex;
+  flex-direction: column;
+}
