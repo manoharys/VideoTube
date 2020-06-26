@@ -33,11 +33,22 @@ class ProfileGenerator {
     }
 
     public function createHeaderSection() {
-        $coverPhotoSrc = $this->profileData->getCoverPhoto();
+        $profileImage = $this->profileData->getProfilePic();
         $name = $this->profileData->getProfileUserFullName();
-        return "<div class='coverPhotoContainer'>
-                    <img src='$coverPhotoSrc' class='coverPhoto'>
-                    <span class='channelName'>$name</span>
+        $subCount = $this->profileData->getSubscriberCount();
+
+        return "<div class='profileHeader'>
+                    <div class='userInfoContainer'>
+                        <img class='profileImage' src='$profileImage'>
+                        <div class='userInfo'>
+                            <span class='title'>$name</span>
+                            <span class='subscriberCount'>$subCount subscribers</span>
+                        </div>
+                    </div>
+
+                    <div class='buttonContainer'>
+
+                    </div>
                 </div>";
     }
 

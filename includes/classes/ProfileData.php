@@ -29,4 +29,13 @@ class ProfileData {
     public function getProfileUserFullName() {
         return $this->profileUserObj->getName();
     }
+
+
+    public function getProfilePic() {
+        return $this->profileUserObj->getUserProfilePic();
+    }
+
+    public function getSubscriberCount() {
+        return $this->profileUserObj->getSubscriberCount();
+    }
 }
