@@ -61,7 +61,6 @@ class ProfileGenerator {
                 </div>";
     }
 
-
     public function createTabsSection() {
         return "<ul class='nav nav-tabs' role='tablist'>
                     <li class='nav-item'>
@@ -76,9 +75,20 @@ class ProfileGenerator {
     }
 
     public function createContentSection() {
+
+        $videos = $this->profileData->getUsersVideos();
+
+        if(sizeof($videos) > 0) {
+            $videoGrid = new VideoGrid($this->conn, $this->userLoggedInObj);
+            $videoGridHtml = $videoGrid->create($videos, null, false);
+        }
+        else {
+            $videoGridHtml = "<span>This user has no videos</span>";
+        }
+
         return "<div class='tab-content channelContent'>
                     <div class='tab-pane fade show active' id='videos' role='tabpanel' aria-labelledby='videos-tab'>
-                        Videos tab
+                        $videoGridHtml
                     </div>
                     <div class='tab-pane fade' id='about' role='tabpanel' aria-labelledby='about-tab'>
                         About tab
