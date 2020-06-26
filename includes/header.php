@@ -75,11 +75,11 @@
                 <a href="upload.php">
                 <img src="./assets/images/icons/upload.png" alt="upload">
                 </a>
-                <a href="#">
+                <!-- <a href="#">
                 <img src="./assets/images/profilePictures/default.png" alt="user">
-                </a>
+                </a> -->
                 
-                <!-- <?php echo ButtonProvider::createUserProfileNavigationButton($conn, $userLoggedInObj->getUsername()); ?> -->
+                 <?php echo ButtonProvider::createUserProfileNavigationButton($conn, $userLoggedInObj->getUsername()); ?> 
             </div>
         </div>
 
