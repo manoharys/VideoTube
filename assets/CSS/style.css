@@ -141,6 +141,7 @@ a:hover {
   min-height: 300px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 3px 16px;
   display: flex;
+  flex-direction: column;
 }
 
 /* form section */

@@ -19,4 +19,10 @@ $formProvider = new SettingsFormProvider();
         ?>
     </div>
 
+    <div class="formSection">
+        <?php
+            echo $formProvider->createPasswordForm();
+        ?>
+    </div>
+
 </div>
