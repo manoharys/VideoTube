@@ -12,7 +12,7 @@ if(!User::isLoggedIn()) {
 $formProvider = new SettingsFormProvider();
 
 if(isset($_POST["saveDetailsButton"])) {
-    $accoiunt = new Account($con);
+    $accoiunt = new Account($conn);
 
     $firstName = FormSanitizer::sanitizeFormString($_POST["firstName"]);
     $lastName = FormSanitizer::sanitizeFormString($_POST["lastName"]);
@@ -28,9 +28,9 @@ if(isset($_POST["savePasswordButton"])) {
     <div class="formSection">
         <?php
             echo $formProvider->createUserDetailsForm(
-                isset($_POST["firstName"]) ? $_POST["firstName"] : $userLoggedInObj->getUserFirstName(),
-                isset($_POST["lastName"]) ? $_POST["lastName"] : $userLoggedInObj->getUserLastName(),
-                isset($_POST["email"]) ? $_POST["email"] : $userLoggedInObj->getUserEmail()
+                isset($_POST["firstName"]) ? $_POST["firstName"] : $userLoggedInObj->getFirstName(),
+                isset($_POST["lastName"]) ? $_POST["lastName"] : $userLoggedInObj->getLastName(),
+                isset($_POST["email"]) ? $_POST["email"] : $userLoggedInObj->getEmail()
             );
         ?>
     </div>

@@ -45,7 +45,22 @@
             return false;
           }
       }
-      
+    
+     
+    public function updateDetails($fn, $ln, $em, $un) {
+      $this->validateFirstName($fn);
+      $this->validateLastName($ln);
+      $this->validateNewEmail($em, $un);
+
+      if(empty($this->errorArray)) {
+          // Update
+      }
+      else {
+          return false;
+      }
+  }
+
+
       public function insertUserDetails($fn, $ln, $un, $em, $pw){
          
         //hashing password
@@ -122,7 +137,24 @@
           array_push($this->errorArray,Constants::$emailTaken);
         }
       }
+      
+      private function validateNewEmail($em, $un) {
 
+        if(!filter_var($em, FILTER_VALIDATE_EMAIL)) {
+            array_push($this->errorArray, Constants::$emailInvalid);
+            return;
+        }
+
+        $query = $this->conn->prepare("SELECT email FROM users WHERE email=:em AND username != :un");
+        $query->bindParam(":em", $em);
+        $query->bindParam(":em", $un);
+        $query->execute();
+
+        if($query->rowCount() != 0) {
+            array_push($this->errorArray, Constants::$emailTaken);
+        }
+
+    }
       /*
         1) Check whether both password matches
         2) Make sure password contains only alphnumeric characters
