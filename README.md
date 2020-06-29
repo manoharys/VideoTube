@@ -40,6 +40,7 @@ VideoTube is a video uploading site containing standard features of YouTube that
 ---
 
 ## Preview
+<img src = 'https://github.com/manoharys/VideoTube/blob/master/preview.gif'>
 
 #### Screenshots
 <img src='https://github.com/manoharys/VideoTube/blob/master/screenshot/signUp.JPG'>
