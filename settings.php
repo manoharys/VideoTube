@@ -39,9 +39,9 @@ if(isset($_POST["saveDetailsButton"])) {
 if(isset($_POST["savePasswordButton"])) {
     $account = new Account($conn);
 
-    $oldPassword = FormSanitizer::sanitizeFormPassword($_POST["oldPassword"]);
-    $newPassword = FormSanitizer::sanitizeFormPassword($_POST["newPassword"]);
-    $newPassword2 = FormSanitizer::sanitizeFormPassword($_POST["newPassword2"]);
+    $oldPassword = FormSanitizer::sanitizingFormPassword($_POST["oldPassword"]);
+    $newPassword = FormSanitizer::sanitizingFormPassword($_POST["newPassword"]);
+    $newPassword2 = FormSanitizer::sanitizingFormPassword($_POST["newPassword2"]);
 
     if($account->updatePassword($oldPassword, $newPassword, $newPassword2, $userLoggedInObj->getusername())) {
         $passwordMessage = "<div class='alert alert-success'>

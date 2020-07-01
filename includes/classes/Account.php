@@ -178,12 +178,12 @@ class Account {
 
     private function validatePasswords($pw, $pw2) {
         if($pw != $pw2) {
-            array_push($this->errorArray, Constants::$passwordsDoNotMatch);
+            array_push($this->errorArray, Constants::$passwordDoNotMatch);
             return;
         }
 
         if(preg_match("/[^A-Za-z0-9]/", $pw)) {
-            array_push($this->errorArray, Constants::$passwordNotAlphanumeric);
+            array_push($this->errorArray, Constants::$passwordNotAlphaNumeric);
             return;
         }
 
