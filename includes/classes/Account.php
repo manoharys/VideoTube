@@ -21,7 +21,7 @@ class Account {
             return true;
         }
         else {
-            array_push($this->errorArray, Constants::$loginFailed);
+            array_push($this->errorArray, Constants::$UserLoginFailed);
             return false;
         }
     }
