@@ -12,5 +12,6 @@
        public static $passwordLength = "Password lenght must between 7 and 25";
        public static $UserLoginFailed = "Username or password is incorrect!";
        public static $passwordIncorrect  = "Password is incorrect!";
+    
    }
 ?>

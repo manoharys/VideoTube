@@ -147,6 +147,7 @@ class VideoProcessor {
 
             $query = $this->conn->prepare("INSERT INTO thumbnails(videoId, filePath, selected)
                                         VALUES(:videoId, :filePath, :selected)");
+          
             $query->bindParam(":videoId", $videoId);
             $query->bindParam(":filePath", $fullThumbnailPath);
             $query->bindParam(":selected", $selected);
